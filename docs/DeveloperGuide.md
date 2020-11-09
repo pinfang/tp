@@ -100,8 +100,8 @@ This developer guide provides information on the architecture and design of the 
 ### 2.1 Prerequisites
 - JDK 11 <br>
 - IntelliJ IDE <br>
-🛈 IntelliJ by default has Gradle and JavaFx plugins installed. <br>
-🛈 Do not disable them. If you have disabled them, go to File > Settings > Plugins to re-enable them.
+Note: IntelliJ by default has Gradle and JavaFx plugins installed. <br>
+Note: Do not disable them. If you have disabled them, go to File > Settings > Plugins to re-enable them.
 
 ### 2.2 Setting Up the Project in your Computer
 The following are the steps to set up the project on your computer:
@@ -125,7 +125,7 @@ The following are the steps to verify your setup:
 ### 3.1 Architecture
 ![image](images/architecture.png) <br>
 
-The architecture diagram above explains the high-level design of the application. Given below is a quick overview of each component:
+The architecture diagram above explains the high-level design of the application. Below is a quick overview of each component:
 
 `Main`: Initializes spending list at app launch and coordinates the interaction between other components
 
@@ -154,7 +154,7 @@ This component, consisting of the `Ui` class, is responsible for receiving user 
 ### 3.3 Parser Component
 Parser component is responsible for interpreting given input as a command.  It verifies that the format complies with [User Guide](UserGuide.md) specification. Then, it matches the appropriate command or error, and formats the provided arguments into parameters for internal methods.
 
-Each command can take either or no argument or some arguments. Commands taking no arguments will call `checkRemainingCommands()` to verify the correct input format. Commands with arguments will extend `Parser` superclass and implement 2 methods:
+Each command can take either no argument or some arguments. Commands taking no arguments will call `checkRemainingCommands()` to verify correct input format. Commands with arguments will extend `Parser` superclass and implement 2 methods:
 
 * `Parser()` to initialise `Parser` subclass with the expected arguments for the detected command
 * `parse(String[] args)` verifies argument format and returns the appropriate `Exception` or `Command` subclass instance with their formatted arguments.
@@ -197,27 +197,27 @@ This component holds the data of the application, including the `SpendingList`, 
 #### 3.5.1 Spending List
 The SpendingList class stores a list of `Item` objects that the user has spent. The `SpendingList` does not depend on Ui, Parser and Storage components. 
 
-Below shows a class diagram on how `SpendingList` interacts with other classes. <br>
+below shows a class diagram of how `SpendingList` interacts with other classes. <br>
 
 <img src="images/spendingListClass.png" width="400" align="center">
 
 #### 3.5.2 Repayment List
 The RepaymentList class stores a list of `Repay` objects. Similar to SpendingList class, RepaymentList class does not depend on other components. 
 
-Below shows a class diagram on how `RepaymentList` interacts with other classes. <br>
+below shows a class diagram of how `RepaymentList` interacts with other classes. <br>
 
 <img src="images/repaymentListClass.png" width="400" align="center">
 
 #### 3.5.3 Budget
-The Budget class stores the budget in the specified currency, and the date it was updated. Similar to SpendingList class, RepaymentList class does not 
+The Budget class stores the budget in the specified currency and the date it was updated. Similar to SpendingList class, Budget class does not 
 depend on other components. 
 
-Below shows a class diagram on how `Budget` interacts with other classes. <br>
+below shows a class diagram of how `Budget` interacts with other classes. <br>
 
 <img src="images/budgetClass.png" width="400" align="center">
 
 ### 3.6 Storage Component
-Storage component persists user data across sessions by storing data as `.json` file. To avoid coupling between unrelated components (e.g. `Ui` and `Item`), objects are persisted by reflection of their variables and methods. Thus, only `SpendingList`, `RepaymentList` and `Budget` have instances of `Storage` to trigger writes to file upon changes in their memory.
+Storage component persists user data across sessions by storing data in a `.json` file. To avoid coupling between unrelated components (e.g. `Ui` and `Item`), objects are persisted by reflection of their variables and methods. Thus, only `SpendingList`, `RepaymentList` and `Budget` maintain instances of `Storage` to trigger writes to file upon changes in their memory.
 
 Since this component relies on the external package `com.google.code.gson:gson:2.8.6` for reflection, we encapsulate gson methods in the following class diagram: <br>
 
@@ -226,10 +226,10 @@ Since this component relies on the external package `com.google.code.gson:gson:2
 ## 4. Implementation
 ### 4.1 Add Feature
 `SpendingList`, `SpendingListCategoriser` and `Ui` facilitate this feature. The Add feature is able to add a new item into the spending list. It implements the following operations:
-* `AddCommand#updateAmount` → converts amount to SGD
-* `AddCommand#updateCurrency` → updates currency to SGD
-* `SpendingList#addItem` → adds an item to the spending list
-* `Ui#printAdd` → prints the message that the item is successfully added to the spending list
+* `AmountConverter#updateAmount` → converts amount to SGD
+* `AmountConverter#updateCurrency` → updates currency to SGD
+* `SpendingList#addItem` → adds item into the spending list
+* `Ui#printAdd` → prints the message that the item is successfully added into the spending list
 * `SpendingListCategoriser#execute`→ categorises the item in the spending list
 * `WarnCommand#execute` → prints a warning message if total spending amount approaches the threshold of 90% of the budget limit or when the total spending amount exceeds the budget limit
 
@@ -237,9 +237,9 @@ Below shows an example of usage:
 1. User types `add -c food -d beer -s USD 10` to add beer into the spending list
 2. The `add` command calls `AddCommand#execute`
 3. `AddCommand#execute` calls the following operations in order:
-   1. `AddCommand#updateAmount` to convert the amount “10” to SGD
-   2. `AddCommand#updateCurrency to update the currency from “USD” to “SGD”
-   3. `SpendingList#addItem` to add beer to the spending list
+   1. `AmountConverter#updateAmount` to convert the amount “10” to SGD
+   2. `AmountConverter#updateCurrency` to update the currency from “USD” to “SGD”
+   3. `SpendingList#addItem` to add beer into the spending list
    4. `Ui#printAdd` to print a message if beer is successfully added into the spending list
    5. `SpendingListCategoriser#execute` to categorise beer under the food category of the spending list
    6. `WarnCommand#execute` to print a warning message if required

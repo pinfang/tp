@@ -123,7 +123,7 @@ The following are the steps to verify your setup:
 
 ## 3. Design
 ### 3.1 Architecture
-![image](images/Architecture.png) <br>
+![image](images/architecture.png) <br>
 
 The architecture diagram above explains the high-level design of the application. Given below is a quick overview of each component:
 

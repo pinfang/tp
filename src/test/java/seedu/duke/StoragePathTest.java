@@ -7,6 +7,7 @@ import seedu.duke.storage.Storage;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+//@author k-walter
 class StoragePathTest {
     static class Rule<T extends Throwable> {
         final String path;

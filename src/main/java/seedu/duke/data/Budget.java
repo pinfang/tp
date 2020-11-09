@@ -9,13 +9,16 @@ public class Budget {
     private double budgetLimit;
     private String currency = "SGD";
     public boolean hasBudget;
-    public String date = "1000-01-01";
+    //@author k-walter
+    public String date = "1970-01-01";
     public Storage storage;
 
+    //@author k-walter
     public Budget(Storage storage) {
         this.storage = storage;
     }
 
+    //@author k-walter
     public Budget() {
         this(null);
     }
@@ -59,6 +62,7 @@ public class Budget {
         return date.toString();
     }
 
+    //@author k-walter
     public void save() throws IOException {
         if (storage == null) {
             return;

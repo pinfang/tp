@@ -7,18 +7,21 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-//@author k-walter
 public class RepaymentList {
-    public Storage storage;
     public ArrayList<Repay> repaymentList = new ArrayList<>();
+    //@author k-walter
+    public Storage storage;
 
+    //@author k-walter
     public RepaymentList() {
     }
 
+    //@author k-walter
     public RepaymentList(Storage storage) {
         this.storage = storage;
     }
 
+    //@author k-walter
     public ArrayList<Repay> getRepaymentList() {
         return repaymentList.stream()
             .sorted(Comparator.comparing(Repay::getDeadline))
@@ -36,6 +39,7 @@ public class RepaymentList {
         save();
     }
 
+    //@author k-walter
     private void save() throws IOException {
         if (storage == null) {
             return;

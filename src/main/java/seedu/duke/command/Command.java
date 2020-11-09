@@ -20,7 +20,7 @@ import seedu.duke.ui.Ui;
 
 import java.io.IOException;
 
-
+//@author k-walter
 public abstract class Command {
     public abstract void execute(Data data, Ui ui) throws IOException,
             InvalidMonthException, InvalidClearRepaymentException, InvalidClearSpendingException,

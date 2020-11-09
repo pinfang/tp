@@ -9,32 +9,38 @@ import java.util.stream.Collectors;
 
 public class SpendingList {
     private String description;
+    public ArrayList<Item> spendingList;
+    //@author k-walter
     public Storage storage;
 
-    public ArrayList<Item> spendingList;
-
+    //@author k-walter
     public SpendingList(String description, ArrayList<Item> spendingList, Storage storage) {
         this.description = description;
         this.spendingList = spendingList;
         this.storage = storage;
     }
-    
+
+    //@author k-walter
     public SpendingList() {
         spendingList = new ArrayList<>();
     }
 
+    //@author k-walter
     public SpendingList(String description, Storage storage) {
         this(description, new ArrayList<>(), storage);
     }
 
+    //@author k-walter
     public SpendingList(Storage storage) {
         this("", storage);
     }
 
+    //@author k-walter
     public SpendingList(ArrayList<Item> spendingList) {
         this("", spendingList, null);
     }
 
+    //@author k-walter
     private void save() throws IOException {
         if (storage == null) {
             return;

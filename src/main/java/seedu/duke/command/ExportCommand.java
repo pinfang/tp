@@ -17,6 +17,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/**
+ * This class represents the command for exporting data to an Excel file.
+ */
 //@@author Wu-Haitao
 public class ExportCommand extends Command {
     private final String filePath;
@@ -44,6 +47,12 @@ public class ExportCommand extends Command {
         this.isOpening = isOpening;
     }
 
+    /**
+     * Exports the data to an Excel file at the given location.
+     *
+     * @param data current data stored by the application
+     * @param ui user interface of the application
+     */
     @Override
     public void execute(Data data, Ui ui) {
         if (!isValidPath) {
@@ -61,6 +70,11 @@ public class ExportCommand extends Command {
         ui.printExportMessage(true);
     }
 
+    /**
+     * Sets the cell values based on the given spending list, then writes them to an Excel file.
+     *
+     * @param list current spending list stored by the application
+     */
     private void exportToExcel(SpendingList list) {
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("sheet0");
@@ -86,6 +100,12 @@ public class ExportCommand extends Command {
         }
     }
 
+    /**
+     * Fills in the headers to the worksheet.
+     *
+     * @param workbook current workbook
+     * @param row header row
+     */
     private void printHeaders(Workbook workbook, Row row) {
         Cell[] cells = new Cell[5];
         CellStyle cellStyle = workbook.createCellStyle();

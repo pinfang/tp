@@ -51,7 +51,7 @@ financial situation and track their spending efficiently.
   1. [Section 3.6 Spending List, examples and its screenshot](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#36-viewing-spending-list-summary-spending-list)
   
 * DG documentation contributions:
-  1. [Section 3.1 Edit Architecture UML](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#43-edit-feature)
+  1. [Section 3.1 Edit Architecture UML](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#31-architecture)
   1. [Section 3.3 Edit Parser component](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#33-parser-component)
   1. [Section 3.5.1 Edit Spending List class diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#351-spending-list)
   1. [Section 3.5.2 Edit Repayment List class diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#352-repayment-list)
@@ -64,6 +64,7 @@ financial situation and track their spending efficiently.
   1. TDD approach of red-green-refactor, increasing coverage and preventing breakage during refactors
   1. Multiple abstraction and refactor of major methods
   1. Debugging of logical errors during refactoring
+  1. Proofread DG
 
 * Review/mentoring contributions:
   1. Reviews PRs: [Link to PRs Reviewed](https://github.com/AY2021S1-CS2113T-F14-2/tp/pulls?q=is%3Apr+reviewed-by%3Ak-walter+)

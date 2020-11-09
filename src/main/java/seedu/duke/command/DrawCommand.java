@@ -18,6 +18,7 @@ import org.openxmlformats.schemas.drawingml.x2006.chart.CTBoolean;
 import org.openxmlformats.schemas.drawingml.x2006.chart.CTLineChart;
 import org.openxmlformats.schemas.drawingml.x2006.chart.CTLineSer;
 import org.openxmlformats.schemas.drawingml.x2006.chart.CTPlotArea;
+
 import seedu.duke.data.Data;
 import seedu.duke.data.Item;
 import seedu.duke.data.SpendingList;
@@ -29,6 +30,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
+/**
+ * This class represents the command for generating charts for specific data.
+ */
 //@@author Wu-Haitao
 public class DrawCommand extends DateCommand {
     private final String filePath = "Charts.xlsx";
@@ -36,7 +40,6 @@ public class DrawCommand extends DateCommand {
     private boolean isOpening;
     private String timePeriod;
 
-    //@author k-walter
     public DrawCommand() {
         this(true);
     }
@@ -46,12 +49,10 @@ public class DrawCommand extends DateCommand {
         this.isOpening = isOpening;
     }
 
-    //@author k-walter
     public DrawCommand(String year, String month) {
         this(year, month, true);
     }
 
-    //@author k-walter
     public DrawCommand(String year, String month, boolean isOpening) {
         if (month == null) {
             timePeriod = year;
@@ -61,6 +62,12 @@ public class DrawCommand extends DateCommand {
         this.isOpening = isOpening;
     }
 
+    /**
+     * Filters the data and generates charts accordingly.
+     *
+     * @param data current data stored by the application
+     * @param ui user interface of the application
+     */
     @Override
     public void execute(Data data, Ui ui) {
         XSSFWorkbook workbook = new XSSFWorkbook();
@@ -199,6 +206,17 @@ public class DrawCommand extends DateCommand {
         return map;
     }
 
+    /**
+     * Plots a pie chart in a sheet according to the given data.
+     *
+     * @param sheet target sheet which the chart will be positioned in
+     * @param category categories of the chart
+     * @param values values of the chart
+     * @param x1 x value of the upper left corner of the chart
+     * @param y1 y value of the upper left corner of the chart
+     * @param x2 x value of the lower right corner of the chart
+     * @param y2 y value of the lower right corner of the chart
+     */
     private void drawChart(XSSFSheet sheet, String[] category, Double[] values, int x1, int y1, int x2, int y2) {
         XSSFDrawing drawing = sheet.createDrawingPatriarch();
         XSSFClientAnchor anchor = drawing.createAnchor(0, 0, 0, 0, x1, y1, x2, y2);
@@ -212,6 +230,17 @@ public class DrawCommand extends DateCommand {
         chart.plot(chartData);
     }
 
+    /**
+     * Plots a line chart in a sheet according to the given data.
+     *
+     * @param sheet target sheet which the chart will be positioned in
+     * @param category categories of the chart
+     * @param values values of the chart
+     * @param x1 x value of the upper left corner of the chart
+     * @param y1 y value of the upper left corner of the chart
+     * @param x2 x value of the lower right corner of the chart
+     * @param y2 y value of the lower right corner of the chart
+     */
     private void drawChart(XSSFSheet sheet, Integer[] category, Double[] values, int x1, int y1, int x2, int y2) {
         XSSFDrawing drawing = sheet.createDrawingPatriarch();
         XSSFClientAnchor anchor = drawing.createAnchor(0, 0, 0, 0, x1, y1, x2, y2);

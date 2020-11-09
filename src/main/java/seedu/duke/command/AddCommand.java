@@ -7,7 +7,6 @@ import seedu.duke.exceptions.InvalidNameException;
 import seedu.duke.ui.Ui;
 import seedu.duke.utilities.AmountConverter;
 import seedu.duke.utilities.DecimalFormatter;
-import seedu.duke.utilities.SpendingListCategoriser;
 
 import java.io.IOException;
 import java.util.logging.Level;

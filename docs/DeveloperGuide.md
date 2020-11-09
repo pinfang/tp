@@ -508,13 +508,16 @@ This table describes the user stories considered while implementing the features
 |Version| As a (/an) ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
 |v1.0|international student|convert local currency to foreign currency or the reverse way|trace my spending easily|
-|v1.0|careless user|view and reset the previous input|ensure the data input is correct|
+|v1.0|careless user|view and edit the previous input|ensure the data input is correct|
 |v1.0|user|have a monthly/yearly summary|know how much I had spent|
+|v1.0|user|clear specific data|ensure all data stored are up-to-date and correct|
 |v2.0|user|set a budget limit|be less likely to overspend my money|
 |v2.0|user|be warned when my spending approaches the budget limit or exceeds the budget limit|be less likely to overspend my money|
 |v2.0|big spender|tag purchases according to categories|for an easier overview|
 |v2.0|user|have weekly reminders on how much has spent|take note of future spending|
 |v2.0|forgetful user|include a list to summarise the repayment to others|repay the debt on time|
+|v2.0|user|be encouraged while managing the finance|keep managing the fiance persistently|
+|v2.0|user|export all saving data to other devices|keep managing the fiance after changing the device|
 
 ## Appendix C: Non-Functional Requirements
 The following statements describe the non-functional requirements for the application: <br>

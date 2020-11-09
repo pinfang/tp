@@ -396,8 +396,8 @@ The following sequence diagram illustrates how this feature works.<br>
 ### 4.9 Reminder Feature
 `SpendingList` and `WarnCommand` facilitate this feature. The Reminder feature is able to provide the user about the 
 total expenditure of the current week, starting on Monday. It implements the following operations:
-* `SpendingList#getSpendingAmountTime` 
-* `WarnCommand#execute`
+* `SpendingList#getSpendingAmountTime` → gets the total amount spent during a period
+* `WarnCommand#execute` → gives out warnings if overspending
 
 Below shows an example of usage:
 

@@ -4,6 +4,7 @@ import seedu.duke.command.Command;
 import seedu.duke.command.ReminderCommand;
 import seedu.duke.data.Data;
 import seedu.duke.exceptions.InvalidCommandException;
+import seedu.duke.exceptions.InvalidNumberException;
 import seedu.duke.parser.Parser;
 import seedu.duke.ui.Ui;
 
@@ -31,7 +32,9 @@ public class Duke {
                 c.execute(data, ui);
                 isExit = c.isExit();
             } catch (ParseException e) {
-                ui.printErrorMessage(new InvalidCommandException().toString());
+                ui.printErrorMessage(new InvalidCommandException().getMessage());
+            } catch (NumberFormatException e) {
+                ui.printErrorMessage(new InvalidNumberException().getMessage());
             } catch (Exception e) {
                 ui.printErrorMessage(e.getMessage());
             }

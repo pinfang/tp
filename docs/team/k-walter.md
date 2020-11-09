@@ -1,4 +1,4 @@
-# Wang Zihao - Project Portfolio Page
+# Walter Kong - Project Portfolio Page
 
 ## Overview
 Cent Wise Dollar Wise is a desktop application for money manager, optimised for use via a Command Line Interface (CLI). 
@@ -43,7 +43,7 @@ financial situation and track their spending efficiently.
   1. `StorageTest`
   
   Refer this link for more information: 
-  [functional code](https://nus-cs2113-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=k-walter&sort=groupTitle&sortWithin=title&since=2020-09-27&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=k-walter&tabRepo=AY2021S1-CS2113T-F14-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=functional-code~test-code~other)
+  [code contributions](https://nus-cs2113-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=k-walter&sort=groupTitle&sortWithin=title&since=2020-09-27&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=k-walter&tabRepo=AY2021S1-CS2113T-F14-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=functional-code~test-code~other)
 
 * UG documentation contributions:
   1. [Section 3 Command Features interpretation, examples and summary of command line specification](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#3-command-features)
@@ -60,6 +60,7 @@ financial situation and track their spending efficiently.
   
 * Team-based tasks contributions:
   1. Code quality enhancements, eg SLAP, happy path, reusing code, `stream`
+  1. Fix bugs and closed [>20 issues](https://github.com/AY2021S1-CS2113T-F14-2/tp/issues?q=is%3Aclosed+is%3Aissue+assignee%3Ak-walter+)
   1. TDD approach of red-green-refactor, increasing coverage and preventing breakage during refactors
   1. Multiple abstraction and refactor of major methods
   1. Debugging of logical errors during refactoring
@@ -70,5 +71,5 @@ financial situation and track their spending efficiently.
   1. Zoom debugging.
 
 * Contributions beyond the project team:
-  1. Bugs reported in PE dry run: [Link to PE dry run](https://github.com/killingbear999/ped/issues) 
+  1. Bugs reported in PE dry run: [Link to PE dry run](https://github.com/k-walter/ped/issues) 
   2. DG reviews

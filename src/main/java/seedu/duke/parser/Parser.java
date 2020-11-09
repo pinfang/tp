@@ -29,6 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+//@author k-walter
 public abstract class Parser {
     protected static CommandLineParser parser;
     protected static Options options;

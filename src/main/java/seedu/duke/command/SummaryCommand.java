@@ -10,8 +10,8 @@ import java.util.logging.Logger;
 //@@author pinfang
 
 /**
- * Summaries the amount spent during a given period of time.
- * Also summaries amount spent in each category.
+ * Summarises the amount spent during a given period of time.
+ * Also summarises amount spent in each category.
  */
 public class SummaryCommand extends DateCommand {
     private final String period;

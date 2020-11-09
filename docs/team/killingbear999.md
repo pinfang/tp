@@ -43,6 +43,7 @@ financial situation and track their spending efficiently.
   3. [Section 4.5 Set Budget Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#45-set-budget-feature)
   4. [Section 4.6 Warn Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#46-warn-feature)
   5. [Section 4.7 Repay Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#47-repay-feature)
+  6. [Appendix B User Stories](https://ay2021s1-cs2113t-f14-2.github.io/tp/DeveloperGuide.html#appendix-b-user-stories)
 
 * Team-based tasks contributions:
   1. Necessary general code enhancements

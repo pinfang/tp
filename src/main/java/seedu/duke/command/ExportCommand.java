@@ -28,6 +28,15 @@ public class ExportCommand extends Command {
     private boolean isValidPath = true;
 
     public ExportCommand(String filePath) {
+        if (filePath.contains("\\")) {
+            if (!filePath.endsWith("\\")) {
+                filePath += "\\";
+            }
+        } else {
+            if (!filePath.endsWith("/")) {
+                filePath += "/";
+            }
+        }
         File folder = new File(filePath);
         if (!folder.isDirectory()) {
             isValidPath = false;

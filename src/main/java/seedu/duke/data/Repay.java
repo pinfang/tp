@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+/** It is to store the repay information. */
 public class Repay {
     private String name;
     private double amount;
@@ -21,11 +22,13 @@ public class Repay {
     }
 
     //@author k-walter
+    /** It is to get the deadline of a specific item. */
     public LocalDate getDeadline() {
         return LocalDate.parse(deadline, format);
     }
     
     //@@author killingbear999
+    /** It is to form the string that combines all the information. */
     public String toString() {
         return name + " " + symbol + " " + String.format("%.2f", amount) + " " + deadline;
     }

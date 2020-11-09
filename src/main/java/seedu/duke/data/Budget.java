@@ -5,6 +5,10 @@ import seedu.duke.storage.Storage;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * Represents the budget limit set by the user.
+ */
+//@@author xieyaoyue
 public class Budget {
     private double budgetLimit;
     private String currency = "SGD";

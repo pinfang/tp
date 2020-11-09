@@ -9,7 +9,6 @@ import seedu.duke.exceptions.InvalidStorageFileExtensionException;
 import seedu.duke.exceptions.InvalidStorageFilePathException;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Modifier;
@@ -27,8 +26,7 @@ public class Storage {
      * @throws InvalidStorageFilePathException      for empty or blank file path
      * @throws InvalidStorageFileExtensionException for non-json file path
      */
-    public Storage(String path) throws InvalidStorageFilePathException, InvalidStorageFileExtensionException,
-        FileNotFoundException {
+    public Storage(String path) throws InvalidStorageFilePathException, InvalidStorageFileExtensionException {
         // Validate path
         String[] parts = path.split("\\.");
         if (path.isBlank() || parts.length == 0) {

@@ -4,32 +4,42 @@ import seedu.duke.exceptions.InvalidStorageFileExtensionException;
 import seedu.duke.exceptions.InvalidStorageFilePathException;
 import seedu.duke.storage.Storage;
 
-import java.io.FileNotFoundException;
-
 //@author k-walter
 public class Data {
     public SpendingList spendingList;
     public RepaymentList repaymentList;
     public Budget budget;
 
-    public Data() throws FileNotFoundException, InvalidStorageFilePathException, InvalidStorageFileExtensionException {
+    /**
+     * Initialises data used in Duke with default file paths.
+     * Instance used as a wrapper for data to be passed between methods
+     * @throws InvalidStorageFilePathException if unable to find path to file
+     * @throws InvalidStorageFileExtensionException if given file extension is not json
+     */
+    public Data() throws InvalidStorageFilePathException, InvalidStorageFileExtensionException {
         spendingList = new Storage("data/duke_spending.json").loadSpendingList();
         repaymentList = new Storage("data/duke_repayment.json").loadRepaymentList();
         budget = new Storage("data/duke_budget.json").loadBudget();
     }
 
-    public Data(SpendingList sl, RepaymentList rl, Budget b) {
-        spendingList = sl;
-        if (spendingList == null) {
-            spendingList = new SpendingList();
+    /**
+     * Use given data objects, even if null. Used extensively in tests
+     * @param spendingList spending list or null
+     * @param repaymentList repayment list or null
+     * @param budget budget or null
+     */
+    public Data(SpendingList spendingList, RepaymentList repaymentList, Budget budget) {
+        this.spendingList = spendingList;
+        if (this.spendingList == null) {
+            this.spendingList = new SpendingList();
         }
-        repaymentList = rl;
-        if (repaymentList == null) {
-            repaymentList = new RepaymentList();
+        this.repaymentList = repaymentList;
+        if (this.repaymentList == null) {
+            this.repaymentList = new RepaymentList();
         }
-        budget = b;
-        if (budget == null) {
-            budget = new Budget();
+        this.budget = budget;
+        if (this.budget == null) {
+            this.budget = new Budget();
         }
     }
 }

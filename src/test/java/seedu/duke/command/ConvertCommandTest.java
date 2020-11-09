@@ -2,13 +2,13 @@ package seedu.duke.command;
 
 import org.junit.jupiter.api.Test;
 import seedu.duke.data.Data;
+import seedu.duke.data.Item;
 import seedu.duke.data.SpendingList;
 import seedu.duke.exceptions.EmptyListException;
 import seedu.duke.exceptions.InvalidCurrencyException;
 import seedu.duke.exceptions.InvalidInputCurrencyException;
 import seedu.duke.exceptions.InvalidOutputCurrencyException;
 import seedu.duke.ui.Ui;
-import seedu.duke.data.Item;
 
 import java.io.IOException;
 import java.util.ArrayList;

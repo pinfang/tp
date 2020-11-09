@@ -540,7 +540,7 @@ Given below are the instructions to test the application manually.
 
 ### E.2 Application Commands
 #### 1. `Draw` Command
-Download `Duke.json` [here](https://github.com/AY2021S1-CS2113T-F14-2/tp/tree/master/data) and copy the file into the 'data' folder. Test the command by executing `draw 2020`. You should expect to see the following output in Microsoft Excel. <br>
+Download `duke_spending.json` [here](https://github.com/AY2021S1-CS2113T-F14-2/tp/tree/master/data) and copy the file into the 'data' folder. Test the command by executing `draw 2020`. You should expect to see the following output in Microsoft Excel. <br>
 <img src="https://user-images.githubusercontent.com/45732128/98440296-04a67a80-2133-11eb-8304-94714b91e38f.png" align="center">
 
 #### 2. Other Commands

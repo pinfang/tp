@@ -46,7 +46,7 @@ public class DrawCommand extends DateCommand {
         this.isOpening = isOpening;
     }
 
-    //@author kk-walter
+    //@author k-walter
     public DrawCommand(String year, String month) {
         this(year, month, true);
     }

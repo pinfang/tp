@@ -44,6 +44,7 @@ class ParserTest {
         }
     }
 
+    //@author k-walter
     @Test
     void allParserReturnClass() throws Exception {
         Rule[] rules = new Rule[]{
@@ -80,6 +81,7 @@ class ParserTest {
         }
     }
 
+    //@author k-walter
     @Test
     void exactNumberOfArgs() {
         Rule[] invalidCommands = new Rule[]{
@@ -117,6 +119,7 @@ class ParserTest {
         }
     }
 
+    //@author k-walter
     @Test
     void addWithoutCategory() throws ParseException, InvalidCommandException, NoSuchMethodException,
         InstantiationException, IllegalAccessException, InvocationTargetException,
@@ -139,6 +142,7 @@ class ParserTest {
         assertEquals(c.category, "Food");
     }
 
+    //@author k-walter
     @Test
     void editOneParam() throws ParseException, InvalidCommandException, NoSuchMethodException, InstantiationException,
         IllegalAccessException, InvocationTargetException, java.text.ParseException,
@@ -151,6 +155,7 @@ class ParserTest {
         assertNull(c.category);
     }
 
+    //@author k-walter
     @Test
     void clearIndex() throws ParseException, InvalidCommandException, NoSuchMethodException,
         InstantiationException, IllegalAccessException, java.text.ParseException,
@@ -162,6 +167,7 @@ class ParserTest {
         assertEquals(cl.clearIndex, 23);
     }
 
+    //@author k-walter
     @Test
     void clearMultipleLists() throws NoSuchMethodException, ParseException, InvalidCommandException,
         InstantiationException, java.text.ParseException, IllegalAccessException,
@@ -175,6 +181,7 @@ class ParserTest {
         assertEquals(3, c.commands.size());
     }
 
+    //@author k-walter
     @Test
     void convertMissingSource() {
         assertThrows(MissingOptionException.class, () -> Parser.parseCommand("convert --target USD"));

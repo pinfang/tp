@@ -6,6 +6,7 @@ import seedu.duke.command.Command;
 import seedu.duke.command.RepayCommand;
 import seedu.duke.exceptions.InvalidCommandException;
 
+//@author k-walter
 public class RepayParser extends Parser {
     public RepayParser() {
         addSpendingOption(true);

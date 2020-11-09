@@ -6,6 +6,7 @@ import seedu.duke.command.Command;
 import seedu.duke.command.SetBudgetCommand;
 import seedu.duke.exceptions.InvalidCommandException;
 
+//@author k-walter
 public class SetParser extends Parser {
     public SetParser() {
         addSpendingOption(true);

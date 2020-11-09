@@ -11,9 +11,20 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Represents the command for purging all data stored in the application.
+ */
+//@@author xieyaoyue
 public class PurgeDataCommand extends Command {
     private static Logger logger = Logger.getLogger("PurgeDataCommand");
 
+    /**
+     * Purges all data stored in the application.
+     *
+     * @param data current data stored by the application
+     * @param ui user interface of the application
+     * @throws IOException if the application fails to purge all data
+     */
     public void execute(Data data, Ui ui) throws IOException {
         logger.log(Level.FINE, "going to purge data");
         ClearSpendingListCommand clearSpendingListCommand = new ClearSpendingListCommand(true, 0);

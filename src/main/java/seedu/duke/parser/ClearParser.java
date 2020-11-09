@@ -11,6 +11,7 @@ import seedu.duke.command.MultipleCommand;
 import seedu.duke.exceptions.InvalidCommandException;
 import seedu.duke.exceptions.InvalidNumberException;
 
+//@author k-walter
 public class ClearParser extends Parser {
     public ClearParser() {
         super();

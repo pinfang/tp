@@ -413,10 +413,10 @@ The following sequence diagram illustrates how this feature works. <br>
 <img src="images/reminder.png" width="700" align="center"> <br>
 
 ### 4.10 Encouragement Feature
-The Ui facilitate this feature. The Encouragement feature regularly encourages the user to keep up his effort in using the application. It implements the following operation:
-Ui#printEncouragementMessage() → prints an encouragement message for the user
+The Ui facilitate this feature. The Encouragement feature regularly encourages the user to keep up his effort in using the application. It implements the following operation: <br>
+`Ui#printEncouragementMessage()` → prints an encouragement message for the user
 
-This is a hidden feature that will be executed automatically by the application when the application is launched. Figure below shows the sequence diagram of `EncouragementCommand` class.
+This is a hidden feature that will be executed automatically by the application for every four spending entries that the user inputs. Figure below shows the sequence diagram of `EncouragementCommand` class.
 
 The following sequence diagram illustrates how this feature works. <br>
 
@@ -463,7 +463,7 @@ The following sequence diagram illustrates how this feature works. <br>
 
 <img src="images/DrawCommand.png" width="600" align="center"> <br>
 
-## 5 Dev Ops
+## 5. Dev Ops
 ### 5.1 Build Automation
 This project uses Gradle for build automation and dependency management. <br>
 

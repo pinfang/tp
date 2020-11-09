@@ -1,6 +1,7 @@
 package seedu.duke.utilities;
 
 //@@author killingbear999
+/** It is to convert the amount if the input currency does not match with the default currency in the system. */
 public class AmountConverter {
     private String currency;
     private double amount;
@@ -17,6 +18,7 @@ public class AmountConverter {
         this.defaultCurrency = defaultCurrency;
     }
     
+    /** It is to update the amount after converting to the default currency. */
     public double updateAmount() {
         if (currency.equals("USD") && defaultCurrency.equals("SGD")) {
             amount = amount * Double.parseDouble(exchangeRates[1][1]);
@@ -38,6 +40,7 @@ public class AmountConverter {
         return amount;
     }
     
+    /** It is to update the symbol of currency to the default currency. */
     public String updateCurrency() {
         currency = defaultCurrency;
         return currency;

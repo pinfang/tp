@@ -1,12 +1,12 @@
 package seedu.duke.command;
 
 import seedu.duke.data.Data;
-import seedu.duke.exceptions.EmptyCommandException;
+import seedu.duke.exceptions.InvalidInputCurrencyException;
 import seedu.duke.exceptions.EmptyListException;
 import seedu.duke.exceptions.InvalidAmountException;
-import seedu.duke.exceptions.InvalidInputCurrencyException;
-import seedu.duke.exceptions.InvalidNameException;
 import seedu.duke.exceptions.InvalidNumberException;
+import seedu.duke.exceptions.InvalidNameException;
+import seedu.duke.exceptions.EmptyCommandException;
 import seedu.duke.ui.Ui;
 import seedu.duke.utilities.AmountConverter;
 import seedu.duke.utilities.DecimalFormatter;
@@ -14,6 +14,7 @@ import seedu.duke.utilities.DecimalFormatter;
 import java.io.IOException;
 
 //@@author killingbear999
+/** This class is to edit the item in the spending list. */
 public class EditCommand extends Command {
     public String description;
     public Double amount;
@@ -30,6 +31,15 @@ public class EditCommand extends Command {
         this.category = category;
     }
     
+    /** It is to convert the currency for the whole spending list.
+     *
+     * @throws InvalidInputCurrencyException If input currency is invalid
+     * @throws EmptyListException If the spending list is empty and the convert command is called
+     * @throws InvalidAmountException If the amount input is less than 0.01 or negative
+     * @throws InvalidNumberException If the index input is out of bound
+     * @throws InvalidNameException If the name input is invalid or does not match with the format
+     * @throws EmptyCommandException If no command is given except for the index
+     */
     @Override
     public void execute(Data data, Ui ui) throws IOException,
             InvalidAmountException, InvalidNumberException, InvalidInputCurrencyException, InvalidNameException,
@@ -86,6 +96,7 @@ public class EditCommand extends Command {
         }
     }
     
+    /** It is to check if the name input is valid. */
     private boolean isValidName() {
         return description.matches(".*[a-zA-Z]+.*");
     }

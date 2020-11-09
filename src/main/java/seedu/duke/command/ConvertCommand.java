@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 //@@author killingbear999
+/** This class is to convert the currency to another one. */
 public class ConvertCommand extends Command {
     private String currencies;
     private String outputCurrency;
@@ -42,6 +43,7 @@ public class ConvertCommand extends Command {
         return inputCurrency + outputCurrency;
     }
 
+    /** It is to identify the exchange rate for the corresponding input and output currencies. */
     private void findExchangeRate() {
         for (int i = 0; i < 4; i++) {
             if (exchangeRates[0][i].equals(currencies)) {
@@ -52,6 +54,7 @@ public class ConvertCommand extends Command {
         }
     }
     
+    /** It is to check if the input and output currencies are valid. */
     private boolean isValid() {
         for (int i = 0; i < 4; i++) {
             if (exchangeRates[0][i].equals(currencies)) {
@@ -60,7 +63,14 @@ public class ConvertCommand extends Command {
         }
         return false;
     }
-
+    
+    /** It is to convert the currency for the whole spending list.
+     *
+     * @throws InvalidInputCurrencyException If input currency is invalid
+     * @throws InvalidOutputCurrencyException If output currency is invalid
+     * @throws InvalidCurrencyException If the exchange rate for the pair of currencies are not stored in the system
+     * @throws EmptyListException If the spending list is empty and the convert command is called
+     */
     @Override
     public void execute(Data data, Ui ui) throws IOException,
             InvalidInputCurrencyException, InvalidOutputCurrencyException, InvalidCurrencyException,
@@ -99,6 +109,7 @@ public class ConvertCommand extends Command {
         }
     }
     
+    /** It is to update the new amount and currency symbol after conversion for the whole spending list. */
     private void updateList() {
         for (Item item : newSpendingList) {
             if (!item.getSymbol().equals(outputCurrency)) {
@@ -108,6 +119,7 @@ public class ConvertCommand extends Command {
         }
     }
     
+    /** It is to update the new amount for a specific item. */
     private void updateNewAmount(Item currentString) {
         double amount = currentString.getAmount();
         amount = amount * exchangeRate;
@@ -116,6 +128,7 @@ public class ConvertCommand extends Command {
         currentString.editAmount(amount);
     }
 
+    /** It is to update the new currency symbol for a specific item. */
     private void updateCurrency(Item currentString) {
         switch (currencies) {
         case "SGDUSD":
@@ -134,6 +147,7 @@ public class ConvertCommand extends Command {
         }
     }
     
+    /** It is to update the budget limit after conversion. */
     public void updateBudgetList(Data data) throws IOException {
         if (!data.budget.getCurrency().equals(outputCurrency)) {
             double budgetLimit = data.budget.getBudgetLimit();
@@ -141,7 +155,8 @@ public class ConvertCommand extends Command {
             data.budget.updateBudget(outputCurrency, newBudgetLimit);
         }
     }
-
+    
+    /** It is to update the whole spending list after conversion. */
     public ArrayList<Item> updateSpendingList() {
         return newSpendingList;
     }

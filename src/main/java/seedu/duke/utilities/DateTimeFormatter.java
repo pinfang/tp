@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 //@@author killingbear999
+/** It is to check whether the date input is in the correct format. */
 public class DateTimeFormatter {
     private String dateFormat;
     
@@ -13,6 +14,7 @@ public class DateTimeFormatter {
         this.dateFormat = dateFormat;
     }
     
+    /** It is to check whether the date input is in the correct format and compare with the current date. */
     public boolean isValid(String dateStr) {
         if (dateStr.length() < 10) {
             return false;

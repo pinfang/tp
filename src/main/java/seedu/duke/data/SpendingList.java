@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+/**
+ * This is to store a list of items spent by the user.
+ */
 public class SpendingList {
     private String description;
     public Storage storage;
@@ -43,41 +46,83 @@ public class SpendingList {
     }
 
     //@@author pinfang
+    /**
+     * Adds an item.
+     * @param description This is the description of the item added.
+     * @param symbol This is the currency symbol of the item added.
+     * @param amount This is the amount spent on the item added.
+     * @param category This is the category of the item.
+     * @throws IOException If there is error in storage.
+     */
     public void addItem(String description, String symbol, double amount, String category) throws IOException {
         Item item = new Item(description, symbol, amount, category);
         spendingList.add(item);
         save();
     }
 
+    /**
+     * Adds an item.
+     * @param description This is the description of the item added.
+     * @param symbol This is the currency symbol of the item added.
+     * @param amount This is the amount spent on the item added.
+     * @throws IOException If there is error in storage.
+     */
     public void addItem(String description, String symbol, double amount) throws IOException {
         Item item = new Item(description, symbol, amount);
         spendingList.add(item);
         save();
     }
 
+    /**
+     * Deletes a specific item in the list.
+     * @param index This is the item to be deleted.
+     * @throws IOException If there is error in storage.
+     */
     public void deleteItem(int index) throws IOException {
         spendingList.remove(index);
         save();
     }
 
+    /**
+     * Deletes all items in the list.
+     * @throws IOException If there is error in storage.
+     */
     public void clearAllItems() throws IOException {
         spendingList.clear();
         assert getListSize() == 0 : "list size should be 0";
         save();
     }
 
+    /**
+     * Gets a specific spending item.
+     * @param index This is the item to get.
+     * @return The item to be gotten.
+     */
     public Item getItem(int index) {
         return spendingList.get(index);
     }
 
+    /**
+     * Gets the size of the spending list.
+     * @return The total number of items saved in the list.
+     */
     public int getListSize() {
         return spendingList.size();
     }
 
+    /**
+     * Gets the whole spending list.
+     * @return The whole spending list.
+     */
     public ArrayList<Item> getSpendingList() {
         return spendingList;
     }
 
+    /**
+     * Gets the total amount spent in a given time.
+     * @param period This is the period of time.
+     * @return total amount spent in a given time.
+     */
     public double getSpendingAmountTime(String period) {
         double totalAmount = 0;
         for (Item i: spendingList) {

@@ -311,11 +311,53 @@ Examples of usage:
 
 `draw` → shows the graph of current month
 
-`draw 2012` → shows the graph of year 2012
-
-`draw 2020 Jun` → shows the graph of Jun 2020
-
 `draw -a` → shows graph of all expenses
+
+Figure below shows an example for exporting data feature: <br>
+
+![image](images/drawCommand1_1.png)
+
+In the Excel file generated you'll get the charts shown below:
+
+This chart shows the spendings in all years
+
+![image](images/drawCommand1_2.png)
+
+This chart shows the proportions of spendings with different categories in all years
+
+![image](images/drawCommand1_3.png)
+
+`draw 2020` → shows the graph of year 2020
+
+Figure below shows an example for exporting data feature: <br>
+
+![image](images/drawCommand2_1.png)
+
+In the Excel file generated you'll get the charts shown below:
+
+This chart shows the spendings of different months in year 2020
+
+![image](images/drawCommand2_2.png)
+
+This chart shows the proportions of spendings with different categories in year 2020
+
+![image](images/drawCommand2_3.png)
+
+`draw 2020 Oct` → shows the graph of Oct 2020
+
+Figure below shows an example for exporting data feature: <br>
+
+![image](images/drawCommand3_1.png)
+
+In the Excel file generated you'll get the charts shown below:
+
+This chart shows the spendings of different days in October 2020
+
+![image](images/drawCommand3_2.png)
+
+This chart shows the proportions of spendings with different categories in October 2020
+
+![image](images/drawCommand3_3.png)
 
 ### 3.13 Exporting Data: `export` 
 
@@ -328,6 +370,14 @@ Format:
 Example of usage: 
 
 `export F:\MyFolder` → exports the records to an Excel file located at F:\MyFolder
+
+Figure below shows an example for exporting data feature: <br>
+
+![image](images/exportCommand_1.png)
+
+The Excel file generated will contain all the spending records as shown below: <br>
+
+![image](images/exportCommand_2.png)
 
 ### 3.14 Editing Spending: `edit`
 This command edits the existing records in the spending list.

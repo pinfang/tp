@@ -247,7 +247,7 @@ Below shows an example of usage:
    
 The following sequence diagram illustrates how this feature works. <br>
 
-<img src="images/AddCommand.png" align="center"> <br>
+![image](images/AddCommand.png) <br>
 
 ### 4.2 Clear Feature
 `SpendingList`, `RepaymentList` and `Budget` facilitate this feature. The Clear feature is able to clear existing data (either budget, repayment entries, spending entries, or all), according to the user’s command. It implements the following operations:

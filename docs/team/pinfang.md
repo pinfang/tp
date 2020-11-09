@@ -14,6 +14,8 @@ financial situation and track their spending efficiently.
     * `ReminderCommand` class
     * `DateFormatter` class
     * `Ui` class (some parts)
+    * `InvalidMonthException` class
+    * `InvalidYearException` class
     
     Refer this link for more information: 
     [`functional code`](https://nus-cs2113-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=&sort=groupTitle&sortWithin=title&since=2020-09-27&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=pinfang&tabRepo=AY2021S1-CS2113T-F14-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code~other)
@@ -22,6 +24,8 @@ financial situation and track their spending efficiently.
     * [Section 3.11 Viewing summary](https://github.com/pinfang/tp/blob/update_UG/docs/UserGuide.md#311-viewing-summary-summary)
     * [Section 4.1 Reminder](https://github.com/pinfang/tp/blob/update_UG/docs/UserGuide.md#41-reminder)
     * [Section 4.2 Warning](https://github.com/pinfang/tp/blob/update_UG/docs/UserGuide.md#42-warning)
+
+<div style="page-break-after: always;"></div>
 
 * DG documentation contributions: 
     * [Section 3.5 Data Component](https://github.com/pinfang/tp/blob/update_UG/docs/DeveloperGuide.md#35-data-component)
@@ -34,7 +38,7 @@ financial situation and track their spending efficiently.
     * Updating user/developer docs that are not specific to a feature
 
 * Review/mentoring contributions:
-    * Reviewing PRs: [link](https://github.com/AY2021S1-CS2113T-F14-2/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3A%40me)
+    * Reviewing PRs: [link](https://github.com/AY2021S1-CS2113T-F14-2/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3Apinfang)
     * Reporting bugs to team members
 
 * Contributions beyond the project team:

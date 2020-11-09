@@ -5,12 +5,12 @@ import org.apache.commons.cli.ParseException;
 import seedu.duke.command.Command;
 import seedu.duke.command.DateCommand;
 import seedu.duke.exceptions.InvalidCommandException;
-import seedu.duke.exceptions.InvalidFormatException;
 import seedu.duke.exceptions.InvalidMonthException;
 import seedu.duke.exceptions.InvalidYearException;
 
 import java.lang.reflect.InvocationTargetException;
 
+//@author k-walter
 public class DateParser<T extends DateCommand> extends Parser {
     private final Class<T> command;
 
@@ -22,7 +22,7 @@ public class DateParser<T extends DateCommand> extends Parser {
 
     @Override
     public Command parse(String[] args) throws ParseException, InvalidCommandException, NoSuchMethodException,
-        IllegalAccessException, InvocationTargetException, InstantiationException, InvalidFormatException,
+        IllegalAccessException, InvocationTargetException, InstantiationException,
         InvalidYearException, InvalidMonthException {
         CommandLine line = getCommandLine(args, true);
 

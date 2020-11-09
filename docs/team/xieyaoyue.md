@@ -19,30 +19,30 @@ financial situation and track their spending efficiently.
   10. `InvalidClearBudgetException` class
   11. `InvalidClearRepaymentException` class
   12. `InvalidClearSpendingException` class
-  13. `InvalidFormatException` class
   
   Refer to this link for more information: 
   [functional code](https://nus-cs2113-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=&sort=groupTitle&sortWithin=title&since=2020-09-27&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=xieyaoyue&tabRepo=AY2021S1-CS2113T-F14-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=functional-code)
   
  * UG documentation contributions
-   1. Section 1 Introduction
-   2. Section 2 Quick Start
-   3. Section 3.1 Adding Spending
-   4. Section 3.2 Clearing Data
-   5. Section 3.3 Viewing Help
-   6. Section 3.4 Purging Data
-   7. Section 4.3 Encouragement
+   1. [Section 1 Introduction](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#1-introduction)
+   2. [Section 2 Quick Start](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#2-quick-start)
+   3. [Section 3.1 Adding Spending](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#31-adding-spending-add)
+   4. [Section 3.2 Clearing Data](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#32-clearing-data-clear)
+   5. [Section 3.3 Viewing Help](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#33-viewing-help-help)
+   6. [Section 3.4 Purging Data](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#34-purging-data-purge-data)
+   7. [Section 4.3 Encouragement](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#43-encouragement)
     
  * DG documentation contributions
-   1. Section 1 Introduction 
-   2. Section 2 Setting up
-   3. Section 3.1 Architecture
-   4. Section 3.2 UI Component
-   5. Section 3.4 Command Component
-   6. Section 4.1 Add Feature
-   7. Section 4.2 Clear Feature
-   8. Section 4.10 Encouragement Feature
-   9. Appendix E: Instructions for Manual Testing
+   1. [Section 1 Introduction](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#1-introduction)
+   2. [Section 2 Setting up](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#2-setting-up)
+   3. [Section 3.1 Architecture](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#31-architecture)
+   4. [Section 3.2 UI Component](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#32-ui-component)
+   5. [Section 3.4 Command Component](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#34-command-component)
+   6. [Section 4.1 Add Feature](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#41-add-feature)
+   7. [Section 4.2 Clear Feature](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#42-clear-feature)
+   8. [Section 4.10 Encouragement Feature](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#410-encouragement-feature)
+   9. [Appendix C: Non-Functional Requirements](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#appendix-c-non-functional-requirements)
+   9. [Appendix E: Instructions for Manual Testing](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#appendix-e-instructions-for-manual-testing)
     
  * Team-based tasks contributions:
    1. Necessary general code enhancements
@@ -50,10 +50,10 @@ financial situation and track their spending efficiently.
    3. Updating user/developer docs that are not specific to a feature
     
  * Review/mentoring contributions:
-   1. Reviews PRs
-   2. Comments in the issue trackers
-   3. Tests and reports bugs
+   1. [Reviews PRs](https://github.com/AY2021S1-CS2113T-F14-2/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3Axieyaoyue)
+   2. [Comments in the issue trackers](https://github.com/AY2021S1-CS2113T-F14-2/tp/issues?q=is%3Aissue+commenter%3Axieyaoyue+is%3Aclosed)
+   3. [Tests and reports bugs](https://github.com/AY2021S1-CS2113T-F14-2/tp/issues?q=is%3Aissue+author%3Axieyaoyue+is%3Aclosed+label%3Atype.Bug+)
     
  * Contributions beyond the team project:
-   1. Report bugs for other teams during PE dry run and actual PE
+   1. Report bugs for other teams during [PE dry run](https://github.com/xieyaoyue/ped/issues) and actual PE
    2. Review DG and UG for other teams

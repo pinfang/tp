@@ -16,7 +16,6 @@ import seedu.duke.command.RepaymentListCommand;
 import seedu.duke.command.SummaryCommand;
 import seedu.duke.command.ViewBudgetCommand;
 import seedu.duke.exceptions.InvalidCommandException;
-import seedu.duke.exceptions.InvalidFormatException;
 import seedu.duke.exceptions.InvalidMonthException;
 import seedu.duke.exceptions.InvalidNumberException;
 import seedu.duke.exceptions.InvalidYearException;
@@ -30,6 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+//@author k-walter
 public abstract class Parser {
     protected static CommandLineParser parser;
     protected static Options options;
@@ -236,7 +236,7 @@ public abstract class Parser {
 
     public abstract Command parse(String[] args) throws ParseException, InvalidCommandException,
         java.text.ParseException, IllegalAccessException, InstantiationException, NoSuchMethodException,
-        InvocationTargetException, InvalidFormatException, InvalidNumberException, InvalidYearException,
+        InvocationTargetException, InvalidNumberException, InvalidYearException,
         InvalidMonthException;
 
     public Parser() {
@@ -265,7 +265,7 @@ public abstract class Parser {
 
     public static Command parseCommand(String userInput) throws InvalidCommandException, ParseException,
         InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException,
-        java.text.ParseException, InvalidFormatException, InvalidNumberException, InvalidYearException,
+        java.text.ParseException, InvalidNumberException, InvalidYearException,
         InvalidMonthException {
         String[] args = userInput.strip().split(" ");
         if (args.length == 0) {

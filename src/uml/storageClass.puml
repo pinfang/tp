@@ -1,0 +1,19 @@
+@startuml
+
+hide circle
+hide members
+skinparam classAttributeIconSize 0
+
+class "SpendingList"
+class "RepaymentList"
+class "Budget"
+class Storage
+class Gson
+
+SpendingList "1" *-down-> "0..1" Storage : save
+RepaymentList "1" *-right-> "0..1" Storage : save
+Budget "1" *-up-> "0..1" Storage : save
+
+Storage "1" *-right-> "1" Gson
+
+@enduml

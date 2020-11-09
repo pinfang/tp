@@ -21,6 +21,7 @@ import seedu.duke.ui.Ui;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//@author k-walter
 public class MultipleCommand extends Command {
     public ArrayList<Command> commands = new ArrayList<>();
 

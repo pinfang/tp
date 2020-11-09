@@ -24,26 +24,26 @@ financial situation and track their spending efficiently.
   15. `SpendingList` class (some functions and methods)
   16. `AddCommand` class (some functions and methods)
   17. `exceptions` related to the above classes
+  18. `test` some tests
   
   Refer this link for more information: 
-  [functional code](https://nus-cs2113-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=&sort=groupTitle&sortWithin=title&since=2020-09-27&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=killingbear999&tabRepo=AY2021S1-CS2113T-F14-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code)
+  [functional code](https://nus-cs2113-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=killingbear999&sort=groupTitle&sortWithin=title&since=2020-09-27&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=killingbear999&tabRepo=AY2021S1-CS2113T-F14-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code)
 
 * UG documentation contributions:
-  1. Section 3.0 Command Features
-  2. Section 3.5 Viewing Repayment List Summary
-  3. Section 3.7 Viewing Budget Limit
-  4. Section 3.8 Setting Budget Limit
-  5. Section 3.9 Inputting Repayment Information
-  6. Section 3.10 Converting Currency
-  7. Section 3.14 Editing Spending 
-  8. Section 3.15 Exiting Program
+  1. [Section 3.7 Viewing Budget Limit](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#37-viewing-budget-limit-view)
+  2. [Section 3.8 Setting Budget Limit](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#38-setting-budget-limit-set)
+  3. [Section 3.9 Inputting Repayment Information](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#39-inputting-repayment-information-repay)
+  4. [Section 3.10 Converting Currency](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#310-converting-currency-convert)
+  5. [Section 3.14 Editing Spending](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#314-editing-spending-edit)
+  6. [Section 3.15 Exiting Program](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#315-exiting-program-logout)
   
 * DG documentation contributions:
-  1. Section 4.3 Edit Feature and its sequence diagram
-  2. Section 4.4 Convert Feature and its sequence diagram
-  3. Section 4.5 Set Budget Feature and its sequence diagram
-  4. Section 4.6 Warn Feature and its sequence diagram
-  5. Section 4.7 Repay Feature and its sequence diagram
+  1. [Section 4.3 Edit Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#43-edit-feature)
+  2. [Section 4.4 Convert Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#44-convert-feature)
+  3. [Section 4.5 Set Budget Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#45-set-budget-feature)
+  4. [Section 4.6 Warn Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#46-warn-feature)
+  5. [Section 4.7 Repay Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#47-repay-feature)
+  6. [Appendix B User Stories](https://ay2021s1-cs2113t-f14-2.github.io/tp/DeveloperGuide.html#appendix-b-user-stories)
 
 * Team-based tasks contributions:
   1. Necessary general code enhancements
@@ -51,16 +51,10 @@ financial situation and track their spending efficiently.
   3. Updating user/developer docs that are not specific to a feature
 
 * Review/mentoring contributions:
-  1. Reviews PRs
-  
-     Refer this link for more information:
-     [PRs Reviewed](https://github.com/AY2021S1-CS2113T-F14-2/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3Akillingbear999)
+  1. Reviews PRs: [Link to PRs Reviewed](https://github.com/AY2021S1-CS2113T-F14-2/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3Akillingbear999)
   2. Comments in the issue trackers
   3. Tests and reports bugs
 
 * Contributions beyond the project team:
-  1. Bugs reported in PE dry run
-  
-     Refer this link for more information:
-     [PE dry run](https://github.com/killingbear999/ped/issues) 
+  1. Bugs reported in PE dry run: [Link to PE dry run](https://github.com/killingbear999/ped/issues) 
   2. DG reviews

@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.reflect.Modifier;
 import java.util.Scanner;
 
+//@author k-walter
 public class Storage {
     private final File file;
     private final Gson gson;

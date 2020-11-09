@@ -36,10 +36,10 @@ public class Ui {
     private static final int TABLE_SIZE = 115;
     private static final String[][] TABLE_OF_COMMANDS = {
         {"ACTION", "FORMAT", "EXAMPLES (IF ANY)"},
-        {"add", "add -c CATEGORY -d DESCRIPTION -s CURRENCY SPENDING", "add -c Food -d chicken rice -s SGD 3.00"},
+        {"add", "add -c CATEGORY -d DESCRIPTION -s CURRENCY AMOUNT", "add -c Food -d chicken rice -s SGD 3.00"},
         {"clear", "clear [-b] [-s SPENDING_INDEX] [-r REPAYMENT_INDEX]", "clear -s 1"},
         {"convert", "convert -s INPUT_CURRENCY -t OUTPUT_CURRENCY", "convert -s SGD -t USD"},
-        {"draw", "draw [YEAR] [MONTH]", "draw 2020 Jun"},
+        {"draw", "draw [YEAR] [MONTH] [-a]", "draw 2020 Jun"},
         {"edit", "edit INDEX [-c NEW_CATEGORY] [-d NEW_DESCRIPTION]", "edit 1 -s SGD 4.00"},
         {"", "[-s NEW_CURRENCY NEW_SPENDING]", ""},
         {"export", "export PATH", "export F:\\MyFolder"},

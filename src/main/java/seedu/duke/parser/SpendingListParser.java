@@ -10,6 +10,7 @@ import seedu.duke.exceptions.InvalidYearException;
 
 import java.util.Arrays;
 
+//@author k-walter
 public class SpendingListParser extends Parser {
     public SpendingListParser() {
         super();

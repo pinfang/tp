@@ -6,6 +6,7 @@ import seedu.duke.storage.Storage;
 
 import java.io.FileNotFoundException;
 
+//@author k-walter
 public class Data {
     public SpendingList spendingList;
     public RepaymentList repaymentList;

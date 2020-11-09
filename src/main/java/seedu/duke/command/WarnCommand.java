@@ -5,6 +5,7 @@ import seedu.duke.ui.Ui;
 import seedu.duke.utilities.DecimalFormatter;
 
 //@@author killingbear999
+/** It is to warn the user when the spending approaches budget limit or its threshold value. */
 public class WarnCommand extends Command {
     private double budgetLimit;
     private double budgetThreshold;

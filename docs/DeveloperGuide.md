@@ -39,6 +39,8 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.1 [Spending List](#351-spending-list)
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.2 [Repayment List](#352-repayment-list)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.3 [Budget](#353-budget)
 
     3.6 [Storage Component](#36-storage-component)
 
@@ -125,25 +127,25 @@ The following are the steps to verify your setup:
 
 The architecture diagram above explains the high-level design of the application. Given below is a quick overview of each component:
 
-`main`: Initializes spending list at app launch and coordinates the interaction between other components
+`Main`: Initializes spending list at app launch and coordinates the interaction between other components
 
-`data`: Stores the data collected from the user
+`Data`: Stores the data collected from the user
 
-`storage`: Reads data from, and writes data to, the hard disk
+`Storage`: Reads data from and writes data to the hard disk
 
-`ui`: Interacts with the user
+`Ui`: Interacts with the user
 
-`command`: Executes the user command or system-issued command
+`Command`: Executes the user command or system-issued command
 
-`parser`: Analyzes the user command
+`Parser`: Analyzes the user command
 
-`utilities`: Contains classes that are used by multiple components
+`Utilities`: Contains classes that are used by multiple components
 
 **How the Architecture Components Interact with Each Other** <br>
 
 The sequence diagram below shows how the components interact with each other when the user issues a general command. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97735507-62c0d580-1b15-11eb-9f14-aab54bf5b29d.png) <br>
+<img src="https://user-images.githubusercontent.com/45732128/97735507-62c0d580-1b15-11eb-9f14-aab54bf5b29d.png" align="center"> <br>
 
 
 ### 3.2 UI Component
@@ -151,61 +153,76 @@ This component, consisting of the `Ui` class, is responsible for receiving user 
 
 ### 3.3 Parser Component
 
+Parser component is responsible for interpreting given input as a command.  It verifies that the format complies with [User Guide](UserGuide.md) specification. Then, it matches the appropriate command or error, and formats the provided arguments into parameters for internal methods.
+
+Each command can take either or no argument or some arguments. Commands taking no arguments will call `checkRemainingCommands()` to verify correct input format. Commands with arguments will extend `Parser` superclass and implement 2 methods:
+
+* `Parser()` to initialise `Parser` subclass with the expected arguments for the detected command
+* `parse(String[] args)` verifies argument format and returns the appropriate `Exception` or `Command` subclass instance with their formatted arguments.
+
 ### 3.4 Command Component
 Every command that a user can input into the application is represented by an object that extends the abstract class `Command`. In addition, hidden commands that do not require user inputs also extends from the same abstract class `Command`. `Command` contains some basic methods that are shared by all types of commands, including:
-* execute(), which is called after setting up the object appropriately, to perform the action requested by the user; and
-* isExit(), which returns a boolean that indicates whether the program should terminate after the command is executed.
+* `execute()`, which is called after setting up the object appropriately, to perform the action requested by the user; and
+* `isExit()`, which returns a boolean that indicates whether the program should terminate after the command is executed.
 
 The following sections classify the `Command`s into different types based on their functionality within the application.
 
 #### 3.4.1 CLI `Command`s related to Spending List
 The following class diagram describes the CLI `Command`s specifically related to the spending list. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97780213-3c0aa980-1bbe-11eb-8ab7-2a553d7b7111.png) <br>
+<img src="images/CommandsSpendingListClass.png" width="600" align="center"> <br>
 
 #### 3.4.2 CLI `Command`s related to Repayment List
 The following class diagram describes the CLI `Command`s specifically related to the repayment list. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97780261-7e33eb00-1bbe-11eb-95e7-1418969f3fac.png)
+<img src="images/CommandsRepaymentListClass.png" width="500" align="center"> <br>
 
 #### 3.4.3 CLI `Command`s related to Budget
 The following class diagram describes the CLI `Command`s specifically related to the budget. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97780278-9c015000-1bbe-11eb-921b-69dfabacadab.png)
+<img src="images/CommandsBudgetClass.png" width="500" align="center"> <br>
 
 #### 3.4.4 General CLI `Command`s 
 The following class diagram describes general CLI `Command`s that apply to the whole application. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97780323-eda9da80-1bbe-11eb-8672-6cd7af590b61.png)
+<img src="images/GeneralCLICommandsClass.png" width="400" align="center"> <br>
 
 #### 3.4.5 Hidden `Command`s
 The following class diagram describes the hidden commands within the program. <br>
 
-![image](https://user-images.githubusercontent.com/60251547/98463079-c58c2e00-21f3-11eb-9b27-addde1e2d081.png)
-
+<img src="images/HiddenCommandsClass.png" width="600" align="center"> <br>
 
 ### 3.5 Data Component
-This component holds the data of the application, including the SpendingList class and RepaymentList class, 
-in the memory.
+This component holds the data of the application, including the `SpendingList`, `RepaymentList` and `Budget` class in the memory.
 
 #### 3.5.1 Spending List
-The SpendingList class stores a list of `Item` objects that the user has spent. The `SpendingList` does not depend on 
-Ui, Parser and Storage components. 
+The SpendingList class stores a list of `Item` objects that the user has spent. The `SpendingList` does not depend on Ui, Parser and Storage components. 
 
 Below shows a class diagram how `SpendingList` interacts with other classes. <br>
 
-![image](images/spendingListClass.png)
+<img src="images/spendingListClass.png" width="400" align="center">
 
 #### 3.5.2 Repayment List
-The RepaymentList class stores a list of `Repay` objects. Similar to SpendingList class, RepaymentList class does not 
-depend on other components. 
+The RepaymentList class stores a list of `Repay` objects. Similar to SpendingList class, RepaymentList class does not depend on other components. 
 
 Below shows a class diagram how `RepaymentList` interacts with other classes. <br>
 
-![image](images/repaymentListClass.png)
+<img src="images/repaymentListClass.png" width="400" align="center">
+
+#### 3.5.3 Budget
+The Budget class stores the budget in the specified currency, and the date it was updated. Similar to SpendingList class, RepaymentList class does not 
+depend on other components. 
+
+Below shows a class diagram how `Budget` interacts with other classes. <br>
+
+<img src="images/budgetClass.png" width="400" align="center">
 
 ### 3.6 Storage Component
+Storage component persists user data across sessions by storing data as `.json` file. To avoid coupling between unrelated components (e.g. `Ui` and `Item`), objects are persisted by reflection of their variables and methods. Thus, only `SpendingList`, `RepaymentList` and `Budget` have instances of `Storage` to trigger writes to file upon changes in their memory.
 
+Since this component relies on the external package `com.google.code.gson:gson:2.8.6` for reflection, we encapsulate gson methods in the following class diagram: <br>
+
+<img src="images/storageClass.png" width="400" align="center">
 
 ## 4. Implementation
 ### 4.1 Add Feature
@@ -230,7 +247,7 @@ Below shows an example of usage:
    
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97770676-60d83000-1b70-11eb-95c1-63c2b300af05.png) <br>
+<img src="images/AddCommand.png" align="center"> <br>
 
 ### 4.2 Clear Feature
 `SpendingList`, `RepaymentList` and `Budget` facilitate this feature. The Clear feature is able to clear existing data (either budget, repayment entries, spending entries, or all), according to the user’s command. It implements the following operations:
@@ -256,7 +273,7 @@ Below shows an example of usage:
    
 The following sequence diagram illustrates how clearing a spending list works. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97770858-08099700-1b72-11eb-86e4-80e07c416ea6.png) <br>
+<img src="images/ClearCommand.png" width="400" align="center"> <br>
 
 ### 4.3 Edit Feature
 `SpendingList`, `AmountConverter`, `DecimalFormatter` and `Ui` facilitate this feature. The Edit feature is able to edit the existing items in the spending list. 
@@ -276,7 +293,7 @@ Below shows an example of the usage:
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](images/EditCommand.png) <br>
+<img src="images/EditCommand.png" align="center"> <br>
 
 ### 4.4 Convert Feature
 `SpendingList` and `Ui` facilitate this feature. The Convert feature is able to convert the currency of the items 
@@ -297,7 +314,7 @@ Below shows an example of the usage:
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](images/ConvertCommand.png) <br>
+<img src="images/ConvertCommand.png" width="500" align="center"> <br>
 
 ### 4.5 Set Budget Feature
 `Budget`, `AmountConverter` , `DecimalFormatter` and `Ui` facilitate this feature. The Set Budget feature is able to set the budget limit for the spending. 
@@ -315,7 +332,7 @@ Below shows an example of usage:
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](images/SetBudgetCommand.png) <br>
+<img src="images/SetBudgetCommand.png" width="700" align="center"> <br>
 
 ### 4.6 Warn Feature
 `Budget`, `SpendingList` and `Ui` facilitate this feature. The Warn feature is able to warn the user when the total 
@@ -336,7 +353,7 @@ limit
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](images/WarnCommand.png) <br>
+<img src="images/WarnCommand.png" width="700" align="center"> <br>
 
 ### 4.7 Repay Feature
 `RepaymentList`, `DecimalFomatter` and `Ui` facilitate this feature. The Repay feature is able to store the repayment information as a 
@@ -352,7 +369,7 @@ SGD 5.0 to Johnny before 2020-12-20
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](images/RepayCommand.png) <br>
+<img src="images/RepayCommand.png" width="600" align="center"> <br>
 
 ### 4.8 Summary Feature
 `SpendingList` and `Item` facilitate this feature. The Summary feature is able to summarise the total amount spent 
@@ -374,7 +391,7 @@ categories during the year 2020.
 
 The following sequence diagram illustrates how this feature works.<br>
 
-![image](images/SummaryCommand.png) <br>
+<img src="images/SummaryCommand.png" width="700" align="center"> <br>
 
 ### 4.9 Reminder Feature
 `SpendingList` and `WarnCommand` facilitate this feature. The Reminder feature is able to provide the user about the 
@@ -393,17 +410,17 @@ Below shows an example of usage:
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](images/reminder.png) <br>
+<img src="images/reminder.png" width="700" align="center"> <br>
 
 ### 4.10 Encouragement Feature
-The Ui facilitate this feature. The Encouragement feature regularly encourages the user to keep up his effort in using the application. It implements the following operation:
-Ui#printEncouragementMessage() → prints an encouragement message for the user
+The Ui facilitate this feature. The Encouragement feature regularly encourages the user to keep up his effort in using the application. It implements the following operation: <br>
+`Ui#printEncouragementMessage()` → prints an encouragement message for the user
 
-This is a hidden feature that will be executed automatically by the application when the application is launched. Figure below shows the sequence diagram of `EncouragementCommand` class.
+This is a hidden feature that will be executed automatically by the application for every four spending entries that the user inputs. Figure below shows the sequence diagram of `EncouragementCommand` class.
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97781607-99572880-1bc7-11eb-82a7-50b614572269.png) <br>
+<img src="images/EncouragementCommand.png" width="400" align="center"> <br>
 
 ### 4.11 Export Feature
 `Workbook`, `FileOutputStream`, `SpendingList` and `Ui` facilitate this feature. The export data feature could extract the current data and export to an Excel file. It implements the following operations:
@@ -421,7 +438,7 @@ Below shows an example of usage:
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](https://user-images.githubusercontent.com/45732128/97736203-4a9d8600-1b16-11eb-9661-ce9c27ccb6a9.png) <br>
+<img src="images/ExportCommand.png" width="600" align="center"> <br>
 
 ### 4.12 Draw Feature
 `Workbook`, `FileOutputStream`, `SpendingList` and `Ui` facilitate this feature. The draw feature analyze the target records and plot two charts accordingly. It implements the following operations:
@@ -444,9 +461,9 @@ Below shows an example of usage:
 
 The following sequence diagram illustrates how this feature works. <br>
 
-![image](https://user-images.githubusercontent.com/59434361/97977429-2b993f80-1e07-11eb-8b57-c6c72eb7e11c.png) <br>
+<img src="images/DrawCommand.png" width="600" align="center"> <br>
 
-## 5 Dev Ops
+## 5. Dev Ops
 ### 5.1 Build Automation
 This project uses Gradle for build automation and dependency management. <br>
 
@@ -491,13 +508,16 @@ This table describes the user stories considered while implementing the features
 |Version| As a (/an) ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
 |v1.0|international student|convert local currency to foreign currency or the reverse way|trace my spending easily|
-|v1.0|careless user|view and reset the previous input|ensure the data input is correct|
+|v1.0|careless user|view and edit the previous input|ensure the data input is correct|
 |v1.0|user|have a monthly/yearly summary|know how much I had spent|
+|v1.0|user|clear specific data|ensure all data stored are up-to-date and correct|
 |v2.0|user|set a budget limit|be less likely to overspend my money|
 |v2.0|user|be warned when my spending approaches the budget limit or exceeds the budget limit|be less likely to overspend my money|
 |v2.0|big spender|tag purchases according to categories|for an easier overview|
 |v2.0|user|have weekly reminders on how much has spent|take note of future spending|
 |v2.0|forgetful user|include a list to summarise the repayment to others|repay the debt on time|
+|v2.0|user|be encouraged while managing the finance|keep managing the fiance persistently|
+|v2.0|user|export all saving data to other devices|keep managing the fiance after changing the device|
 
 ## Appendix C: Non-Functional Requirements
 The following statements describe the non-functional requirements for the application: <br>
@@ -522,7 +542,7 @@ Given below are the instructions to test the application manually.
 ### E.2 Application Commands
 #### 1. `Draw` Command
 Test the command by executing `draw 2020`. You should expect to see the following output in Microsoft Excel. <br>
-![image](https://user-images.githubusercontent.com/45732128/98440296-04a67a80-2133-11eb-8304-94714b91e38f.png)
+<img src="https://user-images.githubusercontent.com/45732128/98440296-04a67a80-2133-11eb-8304-94714b91e38f.png" align="center">
 
 #### 2. Other Commands
 Please refer to [Cent Wise Dollar Wise User Guide](https://ay2021s1-cs2113t-f14-2.github.io/tp/UserGuide.html).

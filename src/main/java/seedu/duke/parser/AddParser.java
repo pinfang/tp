@@ -5,8 +5,8 @@ import org.apache.commons.cli.ParseException;
 import seedu.duke.command.AddCommand;
 import seedu.duke.command.Command;
 import seedu.duke.exceptions.InvalidCommandException;
-import seedu.duke.exceptions.InvalidFormatException;
 
+//@author k-walter
 public class AddParser extends Parser {
     public AddParser() {
         super();
@@ -15,7 +15,7 @@ public class AddParser extends Parser {
         addSpendingOption(true);
     }
 
-    public Command parse(String[] args) throws InvalidFormatException, ParseException, InvalidCommandException {
+    public Command parse(String[] args) throws ParseException, InvalidCommandException {
         CommandLine line = getCommandLine(args);
         String category = parseCategoryOption(line);
         Spending spending = parseSpendingOption(line);

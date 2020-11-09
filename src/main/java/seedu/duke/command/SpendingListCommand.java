@@ -8,6 +8,7 @@ import seedu.duke.ui.Ui;
 
 import java.util.ArrayList;
 
+//@author k-walter
 public class SpendingListCommand extends DateCommand {
     protected String category;
 

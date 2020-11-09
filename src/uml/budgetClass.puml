@@ -1,0 +1,13 @@
+@startuml
+
+hide circle
+hide members
+skinparam classAttributeIconSize 0
+
+class "{abstract}\nCommand"
+class Budget
+
+"{abstract}\nCommand" -right-> Budget : execute
+Budget -> Storage
+
+@enduml

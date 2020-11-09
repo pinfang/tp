@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Adds a spending entry to the spending list.
+ */
 public class AddCommand extends Command {
     public String description;
     public double amount;
@@ -21,10 +24,11 @@ public class AddCommand extends Command {
     private String defaultCurrency = "SGD";
     private static Logger logger = Logger.getLogger("AddCommand");
 
-    public AddCommand(String description, String symbol, double amount, String category) {
+    //@@author xieyaoyue
+    public AddCommand(String description, String currency, double amount, String category) {
         this.description = description;
         this.amount = amount;
-        this.currency = symbol;
+        this.currency = currency;
         this.category = category;
     }
     

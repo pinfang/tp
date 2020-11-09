@@ -7,6 +7,7 @@ import seedu.duke.command.Command;
 import seedu.duke.command.ConvertCommand;
 import seedu.duke.exceptions.InvalidCommandException;
 
+//@author k-walter
 public class ConvertParser extends Parser {
     public ConvertParser() {
         super();

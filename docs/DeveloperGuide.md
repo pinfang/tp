@@ -536,11 +536,11 @@ Given below are the instructions to test the application manually.
 1. Download the jar file and copy into an empty folder.
 2. Navigate to the folder in the command prompt.
 3. Enter `java -jar Duke.jar` and press `enter` to launch the application. 
-4. You should expect a new `data` folder created within the same folder as the jar file. This `data` folder will contain a file named `duke.json`.
+4. You should expect a new `data` folder created within the same folder as the jar file.
 
 ### E.2 Application Commands
 #### 1. `Draw` Command
-Test the command by executing `draw 2020`. You should expect to see the following output in Microsoft Excel. <br>
+Download `duke_spending.json` [here](https://github.com/AY2021S1-CS2113T-F14-2/tp/tree/master/data) and copy the file into the 'data' folder. Test the command by executing `draw 2020`. You should expect to see the following output in Microsoft Excel. <br>
 <img src="https://user-images.githubusercontent.com/45732128/98440296-04a67a80-2133-11eb-8304-94714b91e38f.png" align="center">
 
 #### 2. Other Commands

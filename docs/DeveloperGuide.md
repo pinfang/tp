@@ -104,9 +104,9 @@ This developer guide provides information on the architecture and design of the 
 🛈 Do not disable them. If you have disabled them, go to File > Settings > Plugins to re-enable them.
 
 ### 2.2 Setting Up the Project in your Computer
-The following are the steps to set up the project in your computer:
+The following are the steps to set up the project on your computer:
 1. Fork this repo, and clone the fork to your computer.
-2. Open IntelliJ. If you are not in the welcome screen, click File > Close Project to close the existing project dialog first.
+2. Open IntelliJ. If you are not on the welcome screen, click File > Close Project to close the existing project dialog first.
 3. Set up the correct JDK version for Gradle.
 4. Click Configure > Project Defaults > Project Structure.
 5. Click New…​ and find the directory of the JDK.
@@ -152,10 +152,9 @@ The sequence diagram below shows how the components interact with each other whe
 This component, consisting of the `Ui` class, is responsible for receiving user input and displaying appropriate output messages for the user. This includes error messages, warning messages, encouragement quotes, and messages that indicate if a command is successfully executed. 
 
 ### 3.3 Parser Component
-
 Parser component is responsible for interpreting given input as a command.  It verifies that the format complies with [User Guide](UserGuide.md) specification. Then, it matches the appropriate command or error, and formats the provided arguments into parameters for internal methods.
 
-Each command can take either or no argument or some arguments. Commands taking no arguments will call `checkRemainingCommands()` to verify correct input format. Commands with arguments will extend `Parser` superclass and implement 2 methods:
+Each command can take either or no argument or some arguments. Commands taking no arguments will call `checkRemainingCommands()` to verify the correct input format. Commands with arguments will extend `Parser` superclass and implement 2 methods:
 
 * `Parser()` to initialise `Parser` subclass with the expected arguments for the detected command
 * `parse(String[] args)` verifies argument format and returns the appropriate `Exception` or `Command` subclass instance with their formatted arguments.
@@ -198,14 +197,14 @@ This component holds the data of the application, including the `SpendingList`, 
 #### 3.5.1 Spending List
 The SpendingList class stores a list of `Item` objects that the user has spent. The `SpendingList` does not depend on Ui, Parser and Storage components. 
 
-Below shows a class diagram how `SpendingList` interacts with other classes. <br>
+Below shows a class diagram on how `SpendingList` interacts with other classes. <br>
 
 <img src="images/spendingListClass.png" width="400" align="center">
 
 #### 3.5.2 Repayment List
 The RepaymentList class stores a list of `Repay` objects. Similar to SpendingList class, RepaymentList class does not depend on other components. 
 
-Below shows a class diagram how `RepaymentList` interacts with other classes. <br>
+Below shows a class diagram on how `RepaymentList` interacts with other classes. <br>
 
 <img src="images/repaymentListClass.png" width="400" align="center">
 
@@ -213,7 +212,7 @@ Below shows a class diagram how `RepaymentList` interacts with other classes. <b
 The Budget class stores the budget in the specified currency, and the date it was updated. Similar to SpendingList class, RepaymentList class does not 
 depend on other components. 
 
-Below shows a class diagram how `Budget` interacts with other classes. <br>
+Below shows a class diagram on how `Budget` interacts with other classes. <br>
 
 <img src="images/budgetClass.png" width="400" align="center">
 
@@ -229,21 +228,21 @@ Since this component relies on the external package `com.google.code.gson:gson:2
 `SpendingList`, `SpendingListCategoriser` and `Ui` facilitate this feature. The Add feature is able to add a new item into the spending list. It implements the following operations:
 * `AddCommand#updateAmount` → converts amount to SGD
 * `AddCommand#updateCurrency` → updates currency to SGD
-* `SpendingList#addItem` → adds item into the spending list
-* `Ui#printAdd` → prints the message that the item is successfully added into the spending list
+* `SpendingList#addItem` → adds an item to the spending list
+* `Ui#printAdd` → prints the message that the item is successfully added to the spending list
 * `SpendingListCategoriser#execute`→ categorises the item in the spending list
-* `WarnCommand#execute` → prints warning message if total spending amount approaches the threshold of 90% of the budget limit or when the total spending amount exceeds the budget limit
+* `WarnCommand#execute` → prints a warning message if total spending amount approaches the threshold of 90% of the budget limit or when the total spending amount exceeds the budget limit
 
 Below shows an example of usage:
-1. User types `add -c food -d beer -s USD 10` to add chicken rice into the spending list
+1. User types `add -c food -d beer -s USD 10` to add beer into the spending list
 2. The `add` command calls `AddCommand#execute`
 3. `AddCommand#execute` calls the following operations in order:
-   1. AddCommand#updateAmount to convert the amount “10” to SGD
-   2. AddCommand#updateCurrency to update the currency from “USD” to “SGD”
-   3. SpendingList#addItem to add beer into the spending list
-   4. Ui#printAdd to print a message if beer is successfully added into the spending list
-   5. SpendingListCategoriser#execute to categorise beer under the food category of the spending list
-   6. WarnCommand#execute to print a warning message if required
+   1. `AddCommand#updateAmount` to convert the amount “10” to SGD
+   2. `AddCommand#updateCurrency to update the currency from “USD” to “SGD”
+   3. `SpendingList#addItem` to add beer to the spending list
+   4. `Ui#printAdd` to print a message if beer is successfully added into the spending list
+   5. `SpendingListCategoriser#execute` to categorise beer under the food category of the spending list
+   6. `WarnCommand#execute` to print a warning message if required
    
 The following sequence diagram illustrates how this feature works. <br>
 
@@ -268,8 +267,8 @@ The following sequence diagram illustrates how this feature works. <br>
 Below shows an example of usage:
 1. User types `clear -s 1` to clear the first entry in the spending list.
 2. ClearSpendingListCommand calls `ClearSpendingListCommand#execute`, which calls the following operations in order:
-   1. SpendingList#clearAllItems to clear all items in the spending list and saves the updated spending list in storage.
-   2. Ui#printClearAllSpendingList to print a message if the spending list is cleared successfully
+   1. `SpendingList#clearAllItems` to clear all items in the spending list and saves the updated spending list in storage.
+   2. `Ui#printClearAllSpendingList` to print a message if the spending list is cleared successfully
    
 The following sequence diagram illustrates how clearing a spending list works. <br>
 
@@ -278,7 +277,7 @@ The following sequence diagram illustrates how clearing a spending list works. <
 ### 4.3 Edit Feature
 `SpendingList`, `AmountConverter`, `DecimalFormatter` and `Ui` facilitate this feature. The Edit feature is able to edit the existing items in the spending list. 
 It implements the following operations:
-* `EditCommand#execute` → edit the spending list accordingly and calls the ui to print message output
+* `EditCommand#execute` → edit the spending list accordingly and calls the Ui to print message output
 * `SpendingList#editItemDescription` → updates the description of the item in the spending list
 * `SpendingList#editItemCategory` → updates the category of the item in the spending list
 * `SpendingList#editItemAmount` → updates the amount of the item in the spending list
@@ -328,7 +327,7 @@ budget process
 
 Below shows an example of usage:
 1. User executes `set SGD 100.0` to set the budget limit to SGD 100.0
-2. The `set` command calls `SetBudgetCommand#execute` to complete the setting budget process
+2. The `set` command calls `SetBudgetCommand#execute` to complete the set budget process
 
 The following sequence diagram illustrates how this feature works. <br>
 
@@ -342,13 +341,13 @@ the budget limit. It implements the following operations:
 * `Budget#getBudgetLimit` → retrieves the budget limit
 * `SpendingList#getCurrentAmount` → gets the total amount of spending in the spending list
 * `Ui#printApproachingWarningMessage` → prints the warning message that the spending 
-is approaching budget limit (i.e. exceeds the threshold value of 90% of the budget limit but not yet exceed it), with 
+is approaching the budget limit (i.e. exceeds the threshold value of 90% of the budget limit but not yet exceed it), with 
 the amount remaining
 * `Ui#printExceedingWarningMessage` → prints the warning message that the spending has exceeded the budget limit
 
 Below shows an example of usage:
 1. User adds the spending to the spending list after setting the budget limit
-2. The `add` command calls `WarnCommand#execute` to check if the user approaches or exceeds budget 
+2. The `add` command calls `WarnCommand#execute` to check if the user approaches or exceeds the budget 
 limit 
 
 The following sequence diagram illustrates how this feature works. <br>
@@ -357,7 +356,7 @@ The following sequence diagram illustrates how this feature works. <br>
 
 ### 4.7 Repay Feature
 `RepaymentList`, `DecimalFomatter` and `Ui` facilitate this feature. The Repay feature is able to store the repayment information as a 
-remainder to the user. It implements the following operations:
+reminder to the user. It implements the following operations:
 * `DecimalFormatter#convert` → converts the repayment amount to 4 d.p.
 * `RepaymentList#AddItem` → adds the repayment information to the repayment list
 * `Ui#printRepay` → prints the repayment information which has been successfully stored
@@ -383,11 +382,11 @@ Below shows an example of usage:
 
 1. User executes the `summary 2020` command to get the amount spent during year 2020.
 2. The `summary` command will first update the current currency symbol.
-3. The `summary` command calls the `SpendingList#getSpendingAmountTime` which checks the spending date of every items
+3. The `summary` command calls `SpendingList#getSpendingAmountTime` which checks the spending date of every item
 stored in the memory.
 4. If the item is spent during year 2020, the amount spent will be summed up.
-5. The `summary` command will also call the `SpendingList#getSpendingAmountCategory` to sum up the expenses in each
-categories during the year 2020.
+5. The `summary` command will also call `SpendingList#getSpendingAmountCategory` to sum up the expenses in each
+category during the year 2020.
 
 The following sequence diagram illustrates how this feature works.<br>
 
@@ -404,19 +403,19 @@ Below shows an example of usage:
 1. User starts the application.
 2. The `ReminderCommand` will be instantiated. The dates of the current week (starting from Monday) will be saved to a list.
 3. The `reminder` command will first update the current currency symbol.
-4. In the `ReminderCommand#execute(data, ui)`, a check will be done to see if there is any budget being set by the user.
+4. In the `ReminderCommand#execute(Data, Ui)`, a check will be done to see if there is any budget being set by the user.
     * If no budget is being set, the total expenditure of current week will be tallied up. 
-    * If there is, `WarnCommand#execute(data, ui)` will be called first before tallying up the expenditure. 
+    * If there is, `WarnCommand#execute(Data, Ui)` will be called first before tallying up the expenditure. 
 
 The following sequence diagram illustrates how this feature works. <br>
 
 <img src="images/reminder.png" width="700" align="center"> <br>
 
 ### 4.10 Encouragement Feature
-The Ui facilitate this feature. The Encouragement feature regularly encourages the user to keep up his effort in using the application. It implements the following operation: <br>
+`Ui` facilitates this feature. The Encouragement feature regularly encourages the user to keep up his effort in using the application. It implements the following operation: <br>
 `Ui#printEncouragementMessage()` → prints an encouragement message for the user
 
-This is a hidden feature that will be executed automatically by the application for every four spending entries that the user inputs. Figure below shows the sequence diagram of `EncouragementCommand` class.
+This is a hidden feature that will be executed automatically by the application for every four spending entries that the user inputs. 
 
 The following sequence diagram illustrates how this feature works. <br>
 
@@ -441,7 +440,7 @@ The following sequence diagram illustrates how this feature works. <br>
 <img src="images/ExportCommand.png" width="600" align="center"> <br>
 
 ### 4.12 Draw Feature
-`Workbook`, `FileOutputStream`, `SpendingList` and `Ui` facilitate this feature. The draw feature analyze the target records and plot two charts accordingly. It implements the following operations:
+`Workbook`, `FileOutputStream`, `SpendingList` and `Ui` facilitate this feature. The draw feature analyzes the target records and plot two charts accordingly. It implements the following operations:
 * `Workbook#createSheet` → creates a sheet in the workbook
 * `SpendingList#getItem` → gets the item waiting to be added to the workbook
 * `DrawCommand#getYearMap` `DrawCommand#getMonthMap` `DrawCommand#getDayMap` → returns a map containing the information of sum of amount in records
@@ -452,10 +451,10 @@ The following sequence diagram illustrates how this feature works. <br>
 
 Below shows an example of usage:
 
-1. User executes the `draw 2020` command to generate charts for year 2020.
+1. User executes the `draw 2020` command to generate charts for the year 2020.
 2. The `drawCommand` calls the `Workbook#createSheet()` twice to create two Excel workbook sheet.
 3. `SpendingList#getItem` will be called repeatedly to get items.
-4. `DrawCommand#getMonthMap` and `DrawCommand#getCategories` will be called to analyze the data and decide which data are going to be shown in charts.
+4. `DrawCommand#getMonthMap` and `DrawCommand#getCategories` will be called to analyze the data and decide which data are going to be shown in the charts.
 5. After processing of data, `DrawCommand#drawChart` will be called to generate charts in worksheets.
 6. After writing to an Excel file using `Workbook#write`, a prompt message will be shown by `Ui`.
 
@@ -500,7 +499,7 @@ The target user is NUS hostel students including both local students and interna
 ### Value Proposition
 We observed that hostel students are encountering tight budgets due to expensive hostel fees, on top of their school 
 tuition fees. Hence, we are developing a money manager targeted at NUS hostel students. This money manager   
-Cent Wise Dollar Wise aims to help hostel students to have better financial management with limited budget. 
+Cent Wise Dollar Wise aims to help hostel students to have better financial management with a limited budget. 
 
 ## Appendix B: User Stories
 This table describes the user stories considered while implementing the features in Section 4: <br>

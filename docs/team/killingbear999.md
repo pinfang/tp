@@ -29,19 +29,19 @@ financial situation and track their spending efficiently.
   [functional code](https://nus-cs2113-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=killingbear999&sort=groupTitle&sortWithin=title&since=2020-09-27&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=killingbear999&tabRepo=AY2021S1-CS2113T-F14-2%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code)
 
 * UG documentation contributions:
-  1. Section 3.7 Viewing Budget Limit
-  2. Section 3.8 Setting Budget Limit
-  3. Section 3.9 Inputting Repayment Information
-  4. Section 3.10 Converting Currency
-  5. Section 3.14 Editing Spending
-  6. Section 3.15 Exiting Program
+  1. [Section 3.7 Viewing Budget Limit](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#37-viewing-budget-limit-view)
+  2. [Section 3.8 Setting Budget Limit](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#38-setting-budget-limit-set)
+  3. [Section 3.9 Inputting Repayment Information](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#39-inputting-repayment-information-repay)
+  4. [Section 3.10 Converting Currency](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#310-converting-currency-convert)
+  5. [Section 3.14 Editing Spending](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#314-editing-spending-edit)
+  6. [Section 3.15 Exiting Program](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/UserGuide.md#315-exiting-program-logout)
   
 * DG documentation contributions:
-  1. Section 4.3 Edit Feature and its sequence diagram
-  2. Section 4.4 Convert Feature and its sequence diagram
-  3. Section 4.5 Set Budget Feature and its sequence diagram
-  4. Section 4.6 Warn Feature and its sequence diagram
-  5. Section 4.7 Repay Feature and its sequence diagram
+  1. [Section 4.3 Edit Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#43-edit-feature)
+  2. [Section 4.4 Convert Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#44-convert-feature)
+  3. [Section 4.5 Set Budget Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#45-set-budget-feature)
+  4. [Section 4.6 Warn Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#46-warn-feature)
+  5. [Section 4.7 Repay Feature and its sequence diagram](https://github.com/AY2021S1-CS2113T-F14-2/tp/blob/master/docs/DeveloperGuide.md#47-repay-feature)
 
 * Team-based tasks contributions:
   1. Necessary general code enhancements

@@ -433,7 +433,7 @@ budget threshold, the below warning message will appear. <br>
 Note: You would receive the warning message only after setting the budget limit.
 
 ### 4.3 Encouragement
-Being able to create your budget is a great start, but if you do not have the willpower to stick to the budget you have set, you will soon discover that using this application is a waste of your time. Hence, this feature is implemented to motivate you in keeping up your efforts in budgeting. An encouragement message will be shown every eight times you add an item to the spending list.
+Being able to create your budget is a great start, but if you do not have the willpower to stick to the budget you have set, you will soon discover that using this application is a waste of your time. Hence, this feature is implemented to motivate you in keeping up your efforts in budgeting. An encouragement message will be shown every four times you add an item to the spending list.
 
 Figure below shows an example of encouragement message. <br>
 

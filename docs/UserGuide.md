@@ -37,7 +37,7 @@
 --------------------------------------------------------------------------------------------------------------------
 
 ## **1. Introduction**
-Welcome to Cent Wise Dollar Wise User Guide! Cent Wise Dollar Wise is a desktop application for money management, optimised for use via a Command Line Interface (CLI). This application aims to help NUS hostel students manage their financial situation and track their spending efficiently. 
+Welcome to Cent Wise Dollar Wise User Guide! Cent Wise Dollar Wise is a desktop application for money management, optimized for use via a Command Line Interface (CLI). This application aims to help NUS hostel students manage their financial situation and track their spending efficiently. 
 This user guide provides in-depth documentation on the application’s installation process and command features. 
 
 ## **2. Quick Start**
@@ -66,7 +66,7 @@ Before we begin, do take note of the following information which applies to all 
 
     * `-f` is a flag. Arguments are either flagged or unflagged. You must specify unflagged arguments after the command and flagged arguments after unflagged arguments.
 
-        * **Example**: One valid command line for `edit INDEX [-d NEW_DESCRIPTION] [-c CATEGORY]` is `edit 1 -c Food -d Rice`, which edits the category and description of item at index 1.
+        * **Example**: One valid command line for `edit INDEX [-d NEW_DESCRIPTION] [-c CATEGORY]` is `edit 1 -c Food -d Rice`, which edits the category and description of the item at index 1.
 
         * `INDEX` in `edit INDEX [-d NEW_DESCRIPTION] [-c CATEGORY]` is an unflagged argument and must be specified in the given order (after `edit`).
 
@@ -90,7 +90,7 @@ Before we begin, do take note of the following information which applies to all 
 
 * The default currency of the system is SGD. Only after calling `convert` feature will the default currency will be changed to the currency you have converted to.
 
-* There are 7 categories of spending items. If you did not specify a category or categorise an item in a category not within the first 6, the item will default to Others:
+* There are 7 categories of spending items. If you did not specify a category or categorize an item in a category not within the first 6, the item will default to Others:
     1. Education
     1. Entertainment
     1. Food
@@ -399,7 +399,7 @@ Figure below shows an example for Edit Spending feature: <br>
 ![Example for Editing Spending](images/EditExample.png)
 
 ### 3.15 Exiting Program: `logout`
-This command exists the application.
+This command exits the application.
 
 Format:
 
@@ -425,8 +425,7 @@ It will also warn you if you are reaching your budget limit. <br>
 Note: A new week starts on Monday.
 
 ### 4.2 Warning
-Warns you when you are about to overspend. After you add a spending item and the total expenditure is more than the 
-budget threshold, the below warning message will appear. <br>
+Warns you when you are about to overspend. After you add a spending item and the total expenditure is more than the budget threshold, the below warning message will appear. <br>
 
 ![reminder message](images/warningMessage.png)
 
@@ -445,7 +444,7 @@ Figure below shows an example of encouragement message. <br>
 
 **A**: Install the app in the other computer and copy the data/duke.json to the same folder. When you start the app, it will automatically detect and load the backup data.
 
-**Q**: Are the commands case sensitive?
+**Q**: Are the commands case-sensitive?
 
 **A**: Yes, they are. To execute the commands properly, please strictly follow the format given above.
 

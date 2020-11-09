@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Represents the command for clearing the repayment list.
+ */
+//@@author xieyaoyue
 public class ClearRepaymentListCommand extends Command {
     public boolean isClearAll;
     public Integer clearIndex;
@@ -19,6 +23,15 @@ public class ClearRepaymentListCommand extends Command {
         this.clearIndex = clearIndex;
     }
 
+    /**
+     * Clears the repayment list by either clearing a single entry or the whole list.
+     *
+     * @param data current data stored by the application
+     * @param ui user interface of the application
+     * @throws IOException if the application fails to clear the repayment list
+     * @throws InvalidClearRepaymentException if the repayment list is already empty
+     * @throws InvalidNumberException if the user inputs an invalid index of the repayment list
+     */
     public void execute(Data data, Ui ui) throws IOException,
             InvalidClearRepaymentException, InvalidNumberException {
         int size = data.repaymentList.getListSize();

@@ -20,7 +20,10 @@ import seedu.duke.ui.Ui;
 
 import java.io.IOException;
 
-
+/**
+ * Represents the command that the user wants the program to execute.
+ */
+//@@author xieyaoyue
 public abstract class Command {
     public abstract void execute(Data data, Ui ui) throws IOException,
             InvalidMonthException, InvalidClearRepaymentException, InvalidClearSpendingException,
@@ -29,6 +32,11 @@ public abstract class Command {
             InvalidNameException, InvalidBudgetException, InvalidNumberException, EmptyCommandException,
             InvalidYearException;
 
+    /**
+     * Checks whether the application should exit after the command is executed.
+     *
+     * @return true if the user wants to end program, false if otherwise.
+     */
     public boolean isExit() {
         return false;
     }

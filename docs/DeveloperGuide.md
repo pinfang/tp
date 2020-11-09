@@ -39,6 +39,8 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.1 [Spending List](#351-spending-list)
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.2 [Repayment List](#352-repayment-list)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.5.3 [Budget](#353-budget)
 
     3.6 [Storage Component](#36-storage-component)
 
@@ -121,7 +123,7 @@ The following are the steps to verify your setup:
 
 ## 3. Design
 ### 3.1 Architecture
-![image](images/architecture.png) <br>
+![image](images/Architecture.png) <br>
 
 The architecture diagram above explains the high-level design of the application. Given below is a quick overview of each component:
 
@@ -129,7 +131,7 @@ The architecture diagram above explains the high-level design of the application
 
 `Data`: Stores the data collected from the user
 
-`Storage`: Reads data from, and writes data to, the hard disk
+`Storage`: Reads data from and writes data to the hard disk
 
 `Ui`: Interacts with the user
 
@@ -151,10 +153,17 @@ This component, consisting of the `Ui` class, is responsible for receiving user 
 
 ### 3.3 Parser Component
 
+Parser component is responsible for interpreting given input as a command.  It verifies that the format complies with [User Guide](UserGuide.md) specification. Then, it matches the appropriate command or error, and formats the provided arguments into parameters for internal methods.
+
+Each command can take either or no argument or some arguments. Commands taking no arguments will call `checkRemainingCommands()` to verify correct input format. Commands with arguments will extend `Parser` superclass and implement 2 methods:
+
+* `Parser()` to initialise `Parser` subclass with the expected arguments for the detected command
+* `parse(String[] args)` verifies argument format and returns the appropriate `Exception` or `Command` subclass instance with their formatted arguments.
+
 ### 3.4 Command Component
 Every command that a user can input into the application is represented by an object that extends the abstract class `Command`. In addition, hidden commands that do not require user inputs also extends from the same abstract class `Command`. `Command` contains some basic methods that are shared by all types of commands, including:
-* execute(), which is called after setting up the object appropriately, to perform the action requested by the user; and
-* isExit(), which returns a boolean that indicates whether the program should terminate after the command is executed.
+* `execute()`, which is called after setting up the object appropriately, to perform the action requested by the user; and
+* `isExit()`, which returns a boolean that indicates whether the program should terminate after the command is executed.
 
 The following sections classify the `Command`s into different types based on their functionality within the application.
 
@@ -183,29 +192,37 @@ The following class diagram describes the hidden commands within the program. <b
 
 <img src="images/HiddenCommandsClass.png" width="600" align="center"> <br>
 
-
 ### 3.5 Data Component
-This component holds the data of the application, including the SpendingList class and RepaymentList class, 
-in the memory.
+This component holds the data of the application, including the `SpendingList`, `RepaymentList` and `Budget` class in the memory.
 
 #### 3.5.1 Spending List
-The SpendingList class stores a list of `Item` objects that the user has spent. The `SpendingList` does not depend on 
-Ui, Parser and Storage components. 
+The SpendingList class stores a list of `Item` objects that the user has spent. The `SpendingList` does not depend on Ui, Parser and Storage components. 
 
 Below shows a class diagram how `SpendingList` interacts with other classes. <br>
 
 <img src="images/spendingListClass.png" width="400" align="center">
 
 #### 3.5.2 Repayment List
-The RepaymentList class stores a list of `Repay` objects. Similar to SpendingList class, RepaymentList class does not 
-depend on other components. 
+The RepaymentList class stores a list of `Repay` objects. Similar to SpendingList class, RepaymentList class does not depend on other components. 
 
 Below shows a class diagram how `RepaymentList` interacts with other classes. <br>
 
 <img src="images/repaymentListClass.png" width="400" align="center">
 
-### 3.6 Storage Component
+#### 3.5.3 Budget
+The Budget class stores the budget in the specified currency, and the date it was updated. Similar to SpendingList class, RepaymentList class does not 
+depend on other components. 
 
+Below shows a class diagram how `Budget` interacts with other classes. <br>
+
+<img src="images/budgetClass.png" width="400" align="center">
+
+### 3.6 Storage Component
+Storage component persists user data across sessions by storing data as `.json` file. To avoid coupling between unrelated components (e.g. `Ui` and `Item`), objects are persisted by reflection of their variables and methods. Thus, only `SpendingList`, `RepaymentList` and `Budget` have instances of `Storage` to trigger writes to file upon changes in their memory.
+
+Since this component relies on the external package `com.google.code.gson:gson:2.8.6` for reflection, we encapsulate gson methods in the following class diagram: <br>
+
+<img src="images/storageClass.png" width="400" align="center">
 
 ## 4. Implementation
 ### 4.1 Add Feature

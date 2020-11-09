@@ -50,9 +50,9 @@ financial situation and track their spending efficiently.
    3. Updating user/developer docs that are not specific to a feature
     
  * Review/mentoring contributions:
-   1. Reviews PRs
-   2. Comments in the issue trackers
-   3. Tests and reports bugs
+   1. [Reviews PRs](https://github.com/AY2021S1-CS2113T-F14-2/tp/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3Axieyaoyue)
+   2. [Comments in the issue trackers](https://github.com/AY2021S1-CS2113T-F14-2/tp/issues?q=is%3Aissue+commenter%3Axieyaoyue+is%3Aclosed)
+   3. [Tests and reports bugs](https://github.com/AY2021S1-CS2113T-F14-2/tp/issues?q=is%3Aissue+author%3Axieyaoyue+is%3Aclosed+label%3Atype.Bug+)
     
  * Contributions beyond the team project:
    1. Report bugs for other teams during [PE dry run](https://github.com/xieyaoyue/ped/issues) and actual PE

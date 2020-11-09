@@ -1,11 +1,12 @@
 @startuml
  :User: as user        #tan
-user<-->(ui)
-(main)-up->(ui)
-(main)-up->(command)
-(main)-right->(data)
-(main)-left->(parser)
-(main)-->(storage)
-(command)-right->(ui)
+user<-right->(ui)
+(main)-left->(ui)
+(main)-->(command)
+(command)-right->(data)
+(main)-->(data)
+(main)-right->(parser)
+(data)-right->(storage)
+(command)-->(ui)
 
 @enduml

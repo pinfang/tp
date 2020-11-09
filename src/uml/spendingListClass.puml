@@ -9,10 +9,9 @@ class Item
 Enum "<<Enumeration>>\nCategory"
 class "{abstract}\nCommand"
 
-SpendingList *--> "0 .. *" Item
+SpendingList *--> "*" Item
 Item -> "<<Enumeration>>\nCategory"
 "{abstract}\nCommand" -right-> SpendingList : execute
-SpendingList ..> Storage
-Storage -> SpendingList
+SpendingList -> Storage
 
 @enduml

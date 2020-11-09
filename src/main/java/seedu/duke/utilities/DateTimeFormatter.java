@@ -1,8 +1,8 @@
 package seedu.duke.utilities;
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 //@@author killingbear999
